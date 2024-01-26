@@ -1,0 +1,366 @@
+@media screen {
+  .hero-component {
+    height: 100%;
+  }
+
+  .hero-wrapper {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background-size: cover;
+    color: var(--light-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    background-image: url('../assets/background.png');
+  }
+
+  .top-section {
+    display: flex;
+    padding: 0 200px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .top-section h1 {
+    font-size: 1.8rem;
+    text-transform: capitalize;
+  }
+
+  .top-section h1 span {
+    color: var(--primary-color);
+  }
+
+  .top-section p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .hero-section {
+    gap: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .job-count {
+    display: flex;
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    flex-direction: column;
+    backdrop-filter: blur(7px);
+    color: var(--primary-color);
+    -webkit-backdrop-filter: blur(7px);
+    background: rgba(242, 245, 244, 0.15);
+  }
+
+  .job-top {
+    top: -10px;
+    left: 10px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .job-top h1 {
+    font-size: 2rem;
+    color: var(--tertiary-color);
+  }
+
+  .job-top span {
+    font-weight: 300;
+  }
+
+  .job-bottom {
+    gap: 10px;
+    right: 10px;
+    bottom: -50px;
+    display: flex;
+    align-items: end;
+    position: absolute;
+    justify-content: end;
+    flex-direction: column;
+    color: var(--primary-color);
+  }
+
+  .job-bottom h1 {
+    font-size: 1rem;
+  }
+
+  .job-img-contain {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .p-img {
+    height: 60px;
+    width: 60px;
+    position: relative;
+    object-fit: cover;
+    border-radius: 360%;
+    object-position: center;
+    border: 2px solid var(--background-color);
+  }
+
+  .p-mva {
+    left: 40px;
+    position: relative;
+  }
+  .p-mvb {
+    left: 30px;
+    position: relative;
+  }
+  .p-mvc {
+    left: 20px;
+    position: relative;
+  }
+  .p-mvd {
+    left: 10px;
+    position: relative;
+  }
+  .p-mve {
+    left: 0;
+    position: relative;
+  }
+
+  .p-icon-contain {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+  }
+
+  .p-icon-contain:hover {
+    background-color: var(--primary-color);
+  }
+
+  .icon-add {
+    height: 20px;
+    width: 20px;
+    fill: var(--background-color);
+  }
+
+  .notFound-img {
+    height: 100px;
+    width: inherit;
+    object-fit: cover;
+    border-radius: inherit;
+    object-position: center;
+  }
+
+
+
+  .hero-img,
+  .hero-info {
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img-shape {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px 0 50px 0;
+    background-color: var(--secondary-light-color);
+  }
+
+  .hero-image {
+    width: 330px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-form {
+    gap: 20px;
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 50px 0 50px;
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+  }
+
+  .hero-form h1 {
+    font-size: 0.8rem;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-g-input {
+    width: 100%;
+    border: 1px solid var(--secondary-color);
+  }
+
+  .form-g-input::placeholder {
+    font-size: 0.8rem;
+    text-transform: capitalize;
+  }
+
+  .form-g-input:hover {
+    border: 1px solid var(--primary-color);
+  }
+
+  .btn-form {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+  }
+
+  .btn-form:hover {
+    background-color: var(--primary-color);
+  }
+}
+
+/* using it as global style for larger devices  */
+@media only screen and (min-width: 48em) {
+  .hero-section {
+    top: 0;
+    height: 100%;
+    padding: 30px;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+/* ipad pro screens & laptop */
+@media only screen and (min-width: 49em) and (max-width: 64em) {
+  .hero-section {
+    top: 0;
+    height: 70%;
+    padding: 30px;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .category-section {
+    height: 100vh;
+  }
+
+  .section-info {
+    flex: 50%;
+  }
+
+  .section-img {
+    flex: 50%;
+  }
+
+  .section-info {
+    padding: 20px;
+  }
+
+  .hero-section-banner span {
+    font-size: 0.7rem;
+  }
+
+  .hero-section-banner h2 {
+    font-size: 0.8rem;
+  }
+
+  .h-info {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .h-info h1 {
+    font-size: 2.5rem;
+  }
+
+  .h-info span {
+    color: var(--primary-color);
+  }
+
+
+  .h-btn {
+    padding: 20px;
+  }
+
+  .h-btn span {
+    display: flex;
+  }
+
+  .h-btn-inner {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-result {
+    gap: 10px;
+    width: 495px;
+    bottom: -100px;
+    min-height: 140px;
+    max-height: 140px;
+    position: absolute;
+  }
+
+  .hero-img {
+    height: 320px;
+  }
+
+  .search-result th,
+  .search-result td {
+    font-size: 0.8rem;
+  }
+
+  .job-top {
+    top: -20px;
+    left: -40px;
+  }
+
+  .job-top h1 {
+    font-size: 1.3rem;
+  }
+
+  .job-top span {
+    font-size: 0.8rem;
+  }
+
+  .job-bottom {
+    right: -20px;
+    bottom: -40px;
+  }
+
+  .job-bottom h1 {
+    font-size: 1.2rem;
+  }
+
+  .p-img {
+    height: 50px;
+    
+}
+}
+
+/* large screens : Desktop and 4k screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+}
+
+/* 5k screens and above */
+@media only screen and (min-width: 91em) {
+}
