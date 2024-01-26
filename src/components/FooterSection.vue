@@ -34,8 +34,9 @@
         <div class="foot-part-contain">
           <div class="foot-part">
           <h1>Quick links</h1>
-          <RouterLink to="/" class="foot-link" v-if="routeName === 'Home'">Job</RouterLink>
-          <a href="#job" class="foot-link" :class="activeClass('#job')" v-else>Job</a>
+          <RouterLink to="/" class="foot-link" v-if="routeName === 'Home'">Home</RouterLink>
+          <a href="#job" class="foot-link" :class="activeClass('#Home')" v-else>Home</a>
+          <a href="#company" class="foot-link" :class="activeClass('#company')">Company offers</a>
           <a href="#categories" class="foot-link" :class="activeClass('#categories')">Categories</a>
           <a href="#about" class="foot-link" :class="activeClass('#about')">About us</a>
           <a href="#contact" class="foot-link" :class="activeClass('#contact')">Contact</a>
@@ -78,7 +79,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-down">© 2024 Job Sync Network.</div>
+    <div class="footer-down">© 2024 JobSync Network.</div>
   </div>
 </template>
 
@@ -102,7 +103,7 @@ const route = useRoute()
 const router = useRouter()
 const errMessage = ref('')
 const routeName = ref('Home')
-const phoneNumber = ref('254720266644')
+const phoneNumber = ref('254720905789')
 
 
 onMounted(() => {
@@ -126,7 +127,7 @@ const activeClass = (link) => {
 
 
 const openWhatsapp = () => {
-  window.open(`https://wa.me/${phoneNumber.value}?text=Hi welcome to maher agency`, '_blank')
+  window.open(`https://wa.me/${phoneNumber.value}?text=Hi welcome to JobSync Network`, '_blank')
 }
 const openFacebook = () => {
   window.open('https://', '_blank')
