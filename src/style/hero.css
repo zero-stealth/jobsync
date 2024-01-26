@@ -4,10 +4,14 @@
   }
 
   .hero-wrapper {
+    gap: 10px;
     margin: 10px;
-    padding: 10px;
+    padding:10px;
+    display: flex;
+    padding-top: 50px;
     border-radius: 20px;
     background-size: cover;
+    flex-direction: column;
     color: var(--light-color);
     background-position: center;
     background-repeat: no-repeat;
@@ -17,16 +21,15 @@
   }
 
   .top-section {
+    gap: 10px;
     display: flex;
-    padding: 0 200px;
-    text-align: center;
     align-items: center;
     flex-direction: column;
     justify-content: center;
   }
 
   .top-section h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-transform: capitalize;
   }
 
@@ -35,12 +38,13 @@
   }
 
   .top-section p {
-    font-size: 0.9rem;
-    text-align: center;
+    font-size:1rem;
+     text-align: justify;
+
   }
 
   .hero-section {
-    gap: 10px;
+    gap: 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -59,8 +63,8 @@
   }
 
   .job-top {
-    top: -10px;
-    left: 10px;
+    top: 60px;
+    right: -10px;
     display: flex;
     position: absolute;
     align-items: center;
@@ -68,21 +72,21 @@
   }
 
   .job-top h1 {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: var(--tertiary-color);
   }
 
   .job-top span {
     font-weight: 300;
+    font-size: .7rem;
+
   }
 
   .job-bottom {
     gap: 10px;
-    right: 10px;
-    bottom: -50px;
+    width: 100%;
     display: flex;
     align-items: end;
-    position: absolute;
     justify-content: end;
     flex-direction: column;
     color: var(--primary-color);
@@ -168,12 +172,12 @@
   }
 
   .hero-img-shape {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50px 0 50px 0;
+    border-radius: 40px 0 40px 0;
     background-color: var(--secondary-light-color);
   }
 
@@ -185,14 +189,14 @@
 
   .hero-form {
     gap: 20px;
-    width: 300px;
+    width: 100%;
     padding: 20px;
     display: flex;
     align-items: center;
     border-radius: 12px;
     flex-direction: column;
     justify-content: center;
-    border-radius: 0 50px 0 50px;
+    border-radius: 0 40px 0 40px;
     color: var(--secondary-color);
     background-color: var(--background-color);
   }
@@ -236,24 +240,37 @@
 /* using it as global style for larger devices  */
 @media only screen and (min-width: 48em) {
   .hero-section {
-    top: 0;
-    height: 100%;
-    padding: 30px;
+    padding: 10px;
     position: relative;
     align-items: center;
     flex-direction: row;
   }
-}
 
-/* ipad pro screens & laptop */
-@media only screen and (min-width: 49em) and (max-width: 64em) {
-  .hero-section {
-    top: 0;
-    height: 70%;
-    padding: 30px;
-    position: relative;
-    align-items: center;
-    flex-direction: row;
+  .hero-wrapper {
+    padding-top: 0;
+  }
+
+  .hero-img-shape {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-form {
+    width: 300px;
+  }
+
+  .top-section {
+    padding: 0 200px; 
+  }
+
+  .top-section h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .top-section p {
+    text-align: center;
+
   }
 
   .category-section {
@@ -344,6 +361,8 @@
   .job-bottom {
     right: -20px;
     bottom: -40px;
+    position: absolute;
+    width: fit-content;
   }
 
   .job-bottom h1 {
@@ -353,7 +372,12 @@
   .p-img {
     height: 50px;
     
+  }
 }
+
+/* ipad pro screens & laptop */
+@media only screen and (min-width: 49em) and (max-width: 64em) {
+
 }
 
 /* large screens : Desktop and 4k screens */

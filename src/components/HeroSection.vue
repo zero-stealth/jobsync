@@ -121,5 +121,4 @@ onMounted(() => {
 
 <style scoped>
 @import '@/style/hero.css';
-/* Add your additional styles for loading indicator if needed */
 </style>

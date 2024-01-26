@@ -6,6 +6,7 @@
     bottom: 0;
     display: flex;
     position: fixed;
+    z-index: 999999;
     text-align: center;
     align-items: center;
     flex-direction: column;
