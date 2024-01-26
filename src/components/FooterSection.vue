@@ -19,7 +19,7 @@
           <div class="info-contain">
             <div class="info-foot">
               <EmailIcon class="footer-icon" />
-              <span>meheragencieslts21@yahoo.com</span>
+              <span>jobsyncnet@gmail.com</span>
             </div>
             <div class="info-foot">
               <LocationIcon class="footer-icon" />
@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-down">© 2023 Maher Agencies Limited.</div>
+    <div class="footer-down">© 2024 Job Sync Network.</div>
   </div>
 </template>
 
