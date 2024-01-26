@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
     background-color: var(--background-color);
   }
 
@@ -15,8 +16,9 @@
     border-radius: 12px;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--tertiary-color);
-  
+    background-color: var(--secondary-color);
+
+    clip-path: ellipse(100% 55% at 48% 44%);
   }
 
   .ads-banner h1 {
@@ -32,7 +34,7 @@
     font-size: 0.8rem;
     border-radius: 4px;
     height: fit-content;
-    color: var( --tertiary-color);
+    color: var(--tertiary-color);
     background-color: var(--background-color);
   }
 
@@ -42,21 +44,26 @@
   }
 
   .footer-container {
-    
     width: 100%;
     display: flex;
     flex-direction: row;
+    background:
+      radial-gradient(73.79px at 50% 99px, var(--secondary-color) 99%, #0000 101%) calc(50% - 66px)
+        0/132px 100%,
+      radial-gradient(73.79px at 50% -66px, #0000 99%, var(--secondary-color) 101%) 50% 33px/132px
+        100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
   }
 
   .footer-wrap {
     gap: 20px;
     width: 100%;
     display: flex;
-    padding: 40px 20px;
+    padding: 60px 20px;
     flex-direction: column;
     color: var(--background-color);
     justify-content: space-between;
-    background-color: var(--secondary-color);
   }
 
   .foot-part-contain {
@@ -71,7 +78,6 @@
     text-align: center;
     flex-direction: column;
   }
-
 
   .foot-part h1 {
     font-size: 1.2rem;
@@ -169,7 +175,6 @@
     background-color: var(--primary-color);
   }
 
-
   .social-container {
     gap: 10px;
     display: flex;
@@ -212,11 +217,9 @@
 
 /* using it as global style for larger devices  */
 @media only screen and (min-width: 48em) {
-
   .ads-banner {
     padding: 50px;
     height: 180px;
-
   }
 
   .ads-banner h1 {
@@ -226,19 +229,15 @@
   .btn-banner {
     width: 140px;
     padding: 14px;
-
   }
 
   .foot-part {
     text-align: start;
-
   }
 
   .foot-link {
     font-size: 1.2rem;
-
   }
-
 
   .foot-part p {
     font-size: 1rem;
@@ -263,9 +262,7 @@
     align-items: start;
     flex-direction: column;
     justify-content: start;
-
   }
-
 
   .footer-wrap {
     gap: 0;
@@ -286,9 +283,6 @@
     height: 18px;
     fill: var(--background-color);
   }
-
- 
- 
 }
 
 /* using it as global style for larger devices  */

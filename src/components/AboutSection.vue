@@ -46,8 +46,8 @@
   </div>
 </template>
 <script setup>
-import aboutImage from '../assets/abt.gif'
 import JobIcon from '../icons/JobIcon.vue'
+import aboutImage from '../assets/about.png'
 import LoginIcon from '../icons/LoginIcon.vue'
 import ApplyIcon from '../icons/ApplyIcon.vue'
 </script>
