@@ -1,129 +1,95 @@
 <template>
-  <div class="companies-title">
-    <h1>Popular Companies seeking talents through our website</h1>
+  <div class="popular-section">
+    <h1>
+      <span>{{ data.length }} company </span> available
+    </h1>
 
-  </div>
-  <div class="companies-component">
-    <div class="company-autoscroll">
-      <template v-if="data.length > 0">
-        <div class="company-container" ref="companyContainer">
-          <img v-for="d in data" :key="d.id" :src="d.image" :alt="d.company" class="league-c-img" />
+    <div v-if="data.length > 0">
+      <div class="popular-component" v-for="item in data[0]" :key="item._id">
+        <div class="popular-card">
+          <div class="popular-header">
+            <div class="p-header-inner">
+              <img :src="item.logo" :alt="item.job" class="popular-img" />
+              <h1>{{ item.company }}</h1>
+            </div>
+            <button class="popular-btn" @click="ApplyJob(item._id, item.company)">Apply</button>
+          </div>
+          <div class="popular-info-inner">
+            <h1>{{ item.title }}</h1>
+          </div>
+          <div class="popular-footer">
+            <div class="popular-footer-inner">
+              <CloackIcon class="popular-icon" />
+              <span>{{ item.duration }}</span>
+            </div>
+            <div class="popular-footer-inner">
+              <WorldIcon class="popular-icon" />
+              <span>{{ item.location }}</span>
+            </div>
+            <div class="popular-footer-inner">
+              <WorkerIcon class="popular-icon" />
+              <span>{{ item.staff }}</span>
+            </div>
+            <div class="popular-footer-inner">
+              <JobIcon class="popular-icon" />
+              <span>{{ item.category }}</span>
+            </div>
+            <div class="popular-footer-inner">
+              <PaymentIcon class="popular-icon" />
+              <span>{{ item.salary }}</span>
+            </div>
+          </div>
         </div>
-      </template>
-      <template v-else>
-        <div class="error">
-          <h1>No companies found</h1>
-        </div>
-      </template>
+      </div>
+    </div>
+
+    <div class="nothing-contain" v-else>
+      <img :src="nothingImage" alt="empty" class="nothingImage" />
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-import logo1 from '@/assets/logo.png'
+import axios from 'axios'
+import nothingImage from '../assets/nothing.gif'
+import WorldIcon from '../icons/WorldIcon.vue'
+import WorkerIcon from '../icons/WorkerIcon.vue'
+import PaymentIcon from '../icons/PaymentIcon.vue'
+import CloackIcon from '../icons/CloackIcon.vue'
+import JobIcon from '../icons/JobIcon.vue'
+import { useRouter} from 'vue-router'
+import { ref, onMounted } from 'vue'
 
+const SERVER_HOST = import.meta.env.VITE_SERVER_HOST
 
-const data = ref([
-  {
-    id: 1,
-    image: logo1,
-   
-  },
-  {
-    id: 2,
-    image: 'https://seeklogo.com/images/W/WWF-logo-93D7960C39-seeklogo.com.png',
-   
-  },
-  {
-    id: 3,
-    image: 'https://seeklogo.com/images/U/usa-flag-logo-F080109EF3-seeklogo.com.png',
-   
-  },
-  {
-    id: 4,
-    image: 'https://seeklogo.com/images/U/United_Nations-logo-47BC42E72F-seeklogo.com.png',
-   
-  },
-  {
-    id: 5,
-    image: 'https://seeklogo.com/images/M/meb-milli-egitim-bakanligi-logo-E7B80C5FA9-seeklogo.com.png',
-  },
+const data = ref([])
+const router = useRouter()
 
-    {
-    id: 6,
-    image: 'https://seeklogo.com/images/U/UNICEF-logo-BC1D59CDC0-seeklogo.com.png',
-   
-  },
-  {
-    id: 7,
-    image: 'https://www.novosynergytechnologies.com/assets/img/logo.svg',
-   
-  },
-  {
-    id: 8,
-    image: 'https://seeklogo.com/images/T/TSE-logo-6770CA9F80-seeklogo.com.png',
-   
-  },
-
-  {
-    id: 10,
-    image: 'https://seeklogo.com/images/B/bumn-hadir-untuk-negeri-logo-E0EF5C02ED-seeklogo.com.png',
-   
-  },
-  {
-    id: 11,
-    image: 'https://seeklogo.com/images/P/phibrows-logo-5E3B771335-seeklogo.com.png',
-   
-  },
-  {
-    id: 12,
-    image: 'https://seeklogo.com/images/P/Pantene-logo-DAA1B67CA0-seeklogo.com.png',
-   
-  },
-  {
-    id: 13,
-    image: 'https://seeklogo.com/images/B/balenciaga-paris-logo-A8DB2BEDDD-seeklogo.com.png',
-   
-  },
-
-  {
-    id: 15,
-    image: 'https://seeklogo.com/images/A/ascension-health-logo-AD8B3A7EB0-seeklogo.com.png',
-  },
-  {
-    id: 16,
-    image: 'https://seeklogo.com/images/P/piramal-group-logo-26066C2128-seeklogo.com.png',
-  },
-  {
-    id: 17,
-    image:'https://seeklogo.com/images/D/doctor-medical-mk-logo-A197A7A78F-seeklogo.com.png',
-  },
-
-])
-
-const companyContainer = ref(null);
-let animationInterval;
-
-const scrollImages = () => {
-  const container = companyContainer.value;
-  if (container) {
-    container.scrollLeft += 2; 
-    if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-      container.scrollLeft = 0;
-    }
+const getJob = async () => {
+  try {
+    const response = await axios.get(`${SERVER_HOST}/data/jobs/`)
+    data.value = response.data.length > 0 ? [response.data] : []
+  } catch (err) {
+    console.log(err)
   }
-};
+}
 
 onMounted(() => {
-  animationInterval = setInterval(scrollImages, 50); 
-});
+  getJob()
+})
 
-onBeforeUnmount(() => {
-  clearInterval(animationInterval);
-});
+
+const ApplyJob = (id, name) => {
+  router.push({
+    name: 'Company',
+    params: {
+      id: id,
+      company: name,
+    },
+  });
+};
 </script>
 
-<style scoped>
-@import '@/style/companies.css';
+<style>
+  @import '@/style/company.css';
 </style>

@@ -12,9 +12,10 @@
     flex-direction: column;
     background-size: cover;
     justify-content: center;
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
+    background-color: var(--secondary-color);
     background-image: url('../assets/background.jpeg');
   }
 
@@ -64,7 +65,7 @@
   .form-l-wrapper p {
     font-size: 0.8rem;
     text-align: center;
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
   }
 
   .l-form {
@@ -83,18 +84,18 @@
     border-radius: 4px;
     padding: 10px 20px;
     background: transparent;
-    color: var(--tertiary-color);
-    border: 1px solid var(--tertiary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
   }
 
   .input-l:hover {
-    border: 1px solid var(--tertiary-color);
+    border: 1px solid var(--secondary-color);
   }
 
   .input-l::placeholder {
     font-size: 0.6rem;
     text-transform: capitalize;
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
   }
 
   .btn-f {
@@ -104,11 +105,11 @@
     padding: 15px 20px;
     text-transform: capitalize;
     color: var(--background-color);
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
   }
 
   .btn-f:hover {
-    background: var(--tertiary-color);
+    background: var(--secondary-color);
   }
 
   .l-alternatives {
@@ -129,13 +130,13 @@
     cursor: pointer;
     justify-content: center;
     background-color: transparent;
-    color: var(--tertiary-color);
-    border: 1px solid var(--tertiary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
   }
 
   .alt-btn:hover {
     color: var(--background-color);
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
   }
 }
 /* using it as global style for larger devices  */

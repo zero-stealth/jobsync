@@ -1,0 +1,153 @@
+@media screen {
+  .popular-section {
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popular-section h1 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  
+  .popular-section h1 span {
+    color: var(--secondary-color);
+  }
+
+
+  .popular-card {
+    gap: 20px;
+    padding: 10px;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    color: var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  }
+  .popular-card:hover {
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  }
+
+  .popular-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .p-header-inner {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .p-header-inner h1 {
+    font-weight: 600;
+    font-size: .8rem;
+  }
+
+  .popular-btn {
+    padding: 10px;
+    cursor: pointer;
+    font-size: .8rem;
+    border-radius: 12px;
+    color: var(--dark-color);
+    background: transparent;
+    box-shadow:
+      rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+
+  .popular-btn:hover {
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+  }
+
+  .popular-info-inner h1 {
+    font-size: 1.5rem;
+  }
+
+  .popular-img {
+    height: 40px;
+    object-fit: cover;
+    border-radius: 360%;
+    object-position: center;
+  }
+
+  .popular-footer {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    justify-content: space-between;
+  }
+
+  .popular-footer-inner {
+    gap: 10px;
+    display: flex;
+    min-width: 150px;
+    align-items: center;
+  }
+
+  .popular-footer-inner:first-child {
+    border-left:none;
+  }
+
+  .popular-icon {
+    height: 24px;
+    width: 24px;
+    fill: var(--secondary-color);
+  }
+
+  .nothing-contain {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nothingImage {
+    height: 300px;
+  }
+}
+
+/* using it as global style for larger devices  */
+@media only screen and (min-width: 48em) {
+  .popular-component {
+    padding: 10px;
+  }
+
+  .p-header-inner h1 {
+    font-size: 1rem;
+  }
+
+  .popular-btn {
+    font-size: 1rem;
+  }
+  
+  .popular-info-inner h1 {
+    font-size: 2rem;
+  }
+  
+  .popular-footer-inner {
+    justify-content: center;
+    border-left: 1px solid var(--secondary-color);
+  }
+}
+
+/* ipad pro screens & laptop */
+@media only screen and (min-width: 49em) and (max-width: 64em) {
+}
+
+/* large screens : Desktop and 4k screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+}
+
+/* 5k screens and above */
+@media only screen and (min-width: 91em) {
+}

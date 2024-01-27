@@ -3,16 +3,17 @@
     <div class="abt-contain">
       <div class="abt-info">
         <div class="abt-h">
-          <span>About Company</span>
-          <h1>Your success, our priority</h1>
+          <span>About JobSync Network</span>
+          <h1>A bridge you to your dream company</h1>
         </div>
         <p>
-          We have been dedicated to serving the job market for over three decades. Our commitment to excellence and innovation has made us a trusted name in the industry. We provide top-notch services to job seekers and employers alike. Our mission is to connect the right talent with the right opportunities.
+          We have been dedicated to serving the job market for over three decades providing many job seekers access to their dream job. Our commitment to excellence and innovation has made us a trusted name in the industry.  Our mission is to connect the right talent with the right opportunities.
         </p>
         <div class="abt-list">
-          <li>Committed to your success</li>
-          <li>Innovative solutions for job seekers</li>
-          <li>Connecting employers with top talent</li>
+          <li>24hrs application</li>
+          <li>100% Job Employment</li>
+          <li>Best companies available</li>
+          <li>Guranteed better working conditions</li>
         </div>
       </div>
       <div class="abt-img">
@@ -34,13 +35,13 @@
         <div class="step-icon">
           <JobIcon class="step-icon-c" />
         </div>
-        <p>Search for the job you want</p>
+        <p>Search for the company you want</p>
       </div>
       <div class="step-wrap">
         <div class="step-icon">
           <ApplyIcon class="step-icon-c" />
         </div>
-        <p>Apply for your dream job</p>
+        <p>Apply for your dream company</p>
       </div>
     </div>
   </div>

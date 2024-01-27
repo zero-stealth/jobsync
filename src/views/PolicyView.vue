@@ -1,7 +1,7 @@
 <template>
   <NavigationComponent />
   <div class="policy-container">
-    <h1>Job Agency Company Policy</h1>
+    <h1>JobSync Network Company Policy</h1>
     <div class="policy-section">
       <h2>Equal Opportunity Employment</h2>
       <p>

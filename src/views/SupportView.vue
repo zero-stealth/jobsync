@@ -7,8 +7,8 @@
     </p>
     <p>Contact us at:</p>
     <ul>
-      <li>Email: meheragencieslts21@yahoo.com</li>
-      <li>Phone: +254720266644</li>
+      <li>Email: jobsyncnet@gmail.com</li>
+      <li>Phone: +1 5738614413 </li>
     </ul>
   </div>
 </template>

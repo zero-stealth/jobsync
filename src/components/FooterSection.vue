@@ -1,12 +1,6 @@
 <template>
   <div class="footer-component">
-    <div class="ads-banner">
-      <h1>
-        Let's get connected <br />
-        and start finding your dream job
-      </h1>
-      <button class="btn-banner" @click="openWhatsapp">Start now</button>
-    </div>
+  
     <div class="footer-container">
       <div class="footer-wrap">
         <div class="foot-part">
@@ -27,7 +21,7 @@
             </div>
             <div class="info-foot">
               <PhoneIcon class="footer-icon" />
-              <span>{{ phoneNumber }}</span>
+              <span>+ {{ phoneNumber }}</span>
             </div>
           </div>
         </div>
@@ -103,7 +97,7 @@ const route = useRoute()
 const router = useRouter()
 const errMessage = ref('')
 const routeName = ref('Home')
-const phoneNumber = ref('254720905789')
+const phoneNumber = ref('15738614413')
 
 
 onMounted(() => {

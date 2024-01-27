@@ -40,9 +40,8 @@
 
       <h2>Links to Other Websites</h2>
       <p>
-        This website may include links to other websites. These links are provided for your
-        convenience and do not signify our endorsement of the linked websites. We have no
-        responsibility for the content of linked websites.
+        This website include links to other websites. These links are provided for your
+        convenience and signify our endorsement of the linked websites.
       </p>
 
       <h2>Disclaimer</h2>

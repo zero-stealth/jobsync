@@ -50,6 +50,7 @@
     flex-direction: column;
   }
 
+
   .job-count {
     display: flex;
     padding: 10px;
@@ -171,19 +172,18 @@
     justify-content: center;
   }
 
-  .hero-img-shape {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 40px 0 40px 0;
-    background-color: var(--secondary-light-color);
-  }
+
 
   .hero-image {
     width: 330px;
     object-fit: cover;
+    object-position: center;
+  }
+
+  .connect-image {
+    height: 200px;
+    display: none;
+    object-fit: contain;
     object-position: center;
   }
 
@@ -247,7 +247,7 @@
   }
 
   .hero-wrapper {
-    padding-top: 0;
+    padding-top: 10px;
   }
 
   .hero-img-shape {
@@ -259,9 +259,18 @@
     width: 300px;
   }
 
+  .hero-image {
+    width:450px;
+  }
+
+  .connect-image { 
+    display: flex;
+  }
+
   .top-section {
     padding: 0 200px; 
   }
+
 
   .top-section h1 {
     font-size: 1.8rem;

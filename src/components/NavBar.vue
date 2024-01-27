@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-section">
+  <div class="nav-section" id="Home">
     <div class="nav-container">
       <div class="nav-logo">
         <img :src="logo" alt="logo" class="logo-img" />
@@ -17,7 +17,7 @@
         <RouterLink to="/login" class="nav-link btn-apply">Upload Resume</RouterLink>
       </div>
       <div class="nav-end" v-else>
-        <button class="btn-apply" @click="Logout">logout</button>
+        <button class="btn-logout" @click="Logout">logout</button>
       </div>
       <div class="mobile-nav">
         <MenuIcon class="menu-icon" @click="toggleMenu" />

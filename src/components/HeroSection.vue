@@ -19,10 +19,10 @@
           <span>Companies available</span>
         </div>
         <div class="hero-img">
-          <div class="hero-img-shape">
             <img :src="heroImage" alt="hero image" class="hero-image" />
-          </div>
         </div>
+        <img :src="connectImage" alt="connect image" class="connect-image" />
+
         <div class="job-count job-bottom">
           <h1>1000+ candidates</h1>
           <div class="job-img-contain">
@@ -36,8 +36,8 @@
           </div>
         </div>
         <div class="hero-info">
-          <form action="" class="hero-form">
-            <h1>Search for your dream job</h1>
+          <form @submit.prevent="searchCompany()" class="hero-form">
+            <h1>Search for your dream company</h1>
             <div class="form-group">
               <input v-model="company" type="text" class="form-g-input" placeholder="company" id="search" />
             </div>
@@ -52,8 +52,7 @@
         </div>
       </div>
     </div>
-
-    <CompanySection />
+    <CompanySlide />
   </div>
 </template>
 
@@ -61,8 +60,9 @@
 import axios from 'axios'
 import AddIcon from '@/icons/AddIcon.vue'
 import heroImage from '@/assets/heroImage.png'
+import connectImage from '@/assets/connect.png'
 import { ref, watchEffect, onMounted } from 'vue'
-import CompanySection from '@/components/CompanySection.vue'
+import CompanySlide from '@/components/CompanySlide.vue'
 
 const SERVER_HOST = import.meta.env.VITE_SERVER_HOST
 

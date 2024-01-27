@@ -11,6 +11,7 @@ import PolicyView from '@/views/PolicyView.vue';
 import DisclaimerView from '@/views/DisclaimerView.vue';
 import TermsView from '@/views/TermsView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
+import CompanyView from '@/views/CompanyView.vue'
 
 const routes = [
   {
@@ -51,6 +52,14 @@ const routes = [
     component: SignupView,
     meta: {
       title: "JobSync Network - Signup",
+    }
+  },
+  {
+    path: '/company/:id/:company',
+    name: 'Company',
+    component: CompanyView,
+    meta: {
+      title: "JobSync Network - Company",
     }
   },
   {

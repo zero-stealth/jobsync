@@ -27,7 +27,7 @@ import logo from '../assets/logo.png'
 }
 
 .logo-load {
-  height: 80px;
+  height: 70px;
   object-fit: contain;
   object-position: center;
 }

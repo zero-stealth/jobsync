@@ -2,11 +2,11 @@
   <div class="category-section">
     <div class="category-header">
       <div class="category-title">
-        <h1>Job categories</h1>
+        <h1>Company categories</h1>
         <span></span>
       </div>
       <p>
-        Explore the diverse job opportunities we offer across various industries, spanning
+        Explore  job opportunities we offer across various industries and company, spanning
         entry-level to experienced positions.We foster a dynamic and inclusive work
         environment, providing roles in technology, healthcare, finance, and more.
       </p>
@@ -28,32 +28,38 @@ import tech from '@/assets/tech.jpg'
 import marketing from '@/assets/marketing.png'
 import management from '@/assets/management.png'
 import electrician from '@/assets/electrician.jpg'
-
+import finance from "@/assets/finance.png"
 
 const data = ref([
   {
     id: 1,
     image: tech,
-    title: 'Business in tech',
+    title: 'Tech companies',
     description: 'Get job in tech related field that suit your needs and qualification'
   },
   {
-    id: 1,
+    id: 2,
     image: marketing,
-    title: 'Marketing ',
-    description: 'Get job in all form marketing occupation like design, social media, brand ambassador among others'
+    title: 'Marketing and advertisement ',
+    description: 'Get job in all form marketing comapany like design, social media, brand ambassador among others'
   },
   {
-    id: 1,
+    id: 3,
     image: management,
     title: 'Management ',
     description: 'Get job in any management required field such as in finance, business, real estate among others'
   },
   {
-    id: 1,
+    id: 4,
     image: electrician,
     title: 'Electrician ',
-    description: 'work on electrical related field among many others'
+    description: 'work in electric company to solve the energy crisis'
+  },
+  {
+    id: 5,
+    image: finance,
+    title: 'Finance ',
+    description: 'work in Finance comapanies and agency to ensure to profit increase and mitigate losses'
   }
 ])
 </script>
