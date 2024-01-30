@@ -6,10 +6,10 @@
   /* colors */
   --dark-color : #020202ff;
   --light-color : #E1F0DA;
-  --primary-color: #8bc63bff;
-  --secondary-color: #12654bff;
+  --primary-color: rgb(228, 102, 40);
+  --secondary-color: #165253ff;
   --background-color: #ffffffff;
-  --secondary-light-color: rgb(25, 117, 88);
+  --secondary-light-color: #215958ff;
   --bar-shadow: rgba(2, 2, 3, 0.2) 0px 7px 29px 0px;
   --nav-shadow: 0 8px 32px 0 rgba(147, 154, 247, 0.37);
 
@@ -78,16 +78,16 @@
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) var(--secondary-color);
+  scrollbar-color: var(--secondary-color) var(--primary-color);
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--primary-color);
+  background: var(--secondary-color);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border: 4px solid var(--secondary-color);
+  background-color: var(--secondary-color);
+  border: 4px solid var(--primary-color);
 }
 
 /* using it as global style for larger devices  */

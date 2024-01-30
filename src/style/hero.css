@@ -1,14 +1,9 @@
 @media screen {
-  .hero-component {
-    height: 100%;
-  }
-
   .hero-wrapper {
     gap: 10px;
-    margin: 10px;
-    padding:10px;
     display: flex;
-    padding-top: 50px;
+    padding: 10px;
+    margin: 10px;
     border-radius: 20px;
     background-size: cover;
     flex-direction: column;
@@ -20,34 +15,16 @@
     background-image: url('../assets/background.png');
   }
 
-  .top-section {
-    gap: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .top-section h1 {
-    font-size: 1.6rem;
-    text-transform: capitalize;
-  }
-
-  .top-section h1 span {
-    color: var(--primary-color);
-  }
-
-  .top-section p {
-    font-size:1rem;
-     text-align: justify;
-
-  }
 
   .hero-section {
     gap: 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  .hero-img h1 span {
+    color: var(--primary-color);
   }
 
 
@@ -67,6 +44,7 @@
     top: 60px;
     right: -10px;
     display: flex;
+    cursor: pointer;
     position: absolute;
     align-items: center;
     justify-content: center;
@@ -171,8 +149,9 @@
     align-items: center;
     justify-content: center;
   }
-
-
+  .hero-img {
+    flex-direction: column;
+  }
 
   .hero-image {
     width: 330px;
@@ -181,7 +160,7 @@
   }
 
   .connect-image {
-    height: 200px;
+    height: 140px;
     display: none;
     object-fit: contain;
     object-position: center;
@@ -260,26 +239,11 @@
   }
 
   .hero-image {
-    width:450px;
+    width:500px;
   }
 
   .connect-image { 
     display: flex;
-  }
-
-  .top-section {
-    padding: 0 200px; 
-  }
-
-
-  .top-section h1 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .top-section p {
-    text-align: center;
-
   }
 
   .category-section {

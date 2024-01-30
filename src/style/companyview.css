@@ -8,7 +8,6 @@
   }
 
 
-
   .company-info {
     gap: 20px;
     display: flex;
@@ -18,13 +17,16 @@
   .company-header {
     gap: 10px;
     display: flex;
+    flex-direction: column;
   }
 
-  .company-header-inner h1 {
-    font-weight: 500;
-    font-size: 1.2rem;
+  .company-header h1 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-decoration: underline;
     color: var(--secondary-color);
   }
+
 
   .company-inner h2 {
     font-size: 1rem;
@@ -47,10 +49,12 @@
   }
 
   .company-h-logo {
-    height: 100px;
+    width: 100%;
+    height: 150px;
     border-radius: 12px;
-    object-fit: contain;
-    object-position: center;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
   }
 
   .apply-page {
@@ -127,14 +131,9 @@
 
 /* using it as global style for larger devices  */
 @media only screen and (min-width: 48em) {
-  .company-container {
-    flex-direction: row;
+  .company-info {
+    align-items: start;
   }
-  .company-info,
-  .apply-page {
-    flex: 50%;
-  }
-
 }
 
 /* ipad pro screens & laptop */

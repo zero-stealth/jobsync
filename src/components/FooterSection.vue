@@ -30,7 +30,7 @@
           <h1>Quick links</h1>
           <RouterLink to="/" class="foot-link" v-if="routeName === 'Home'">Home</RouterLink>
           <a href="#job" class="foot-link" :class="activeClass('#Home')" v-else>Home</a>
-          <a href="#company" class="foot-link" :class="activeClass('#company')">Company offers</a>
+          <a href="#company" class="foot-link" :class="activeClass('#company')">job offers</a>
           <a href="#categories" class="foot-link" :class="activeClass('#categories')">Categories</a>
           <a href="#about" class="foot-link" :class="activeClass('#about')">About us</a>
           <a href="#contact" class="foot-link" :class="activeClass('#contact')">Contact</a>

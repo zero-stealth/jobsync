@@ -1,7 +1,6 @@
 <template>
   <div class="companies-title">
     <h1>Popular Companies seeking talents through our website</h1>
-
   </div>
   <div class="companies-component">
     <div class="company-autoscroll">
@@ -21,38 +20,32 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import logo1 from '@/assets/logo.png'
-
 
 const data = ref([
-  {
-    id: 1,
-    image: logo1,
-   
-  },
+
   {
     id: 2,
-    image: 'https://seeklogo.com/images/W/WWF-logo-93D7960C39-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8dnYZKFN7akNCaoFuUvfm4GNTxS3wtOltpTeQ&s=0',
    
   },
   {
     id: 3,
-    image: 'https://seeklogo.com/images/U/usa-flag-logo-F080109EF3-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoLx5noMsD3MQ03N4Cr7SmtrjXhO4JAi_dZFN&s=0',
    
   },
   {
     id: 4,
-    image: 'https://seeklogo.com/images/U/United_Nations-logo-47BC42E72F-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdMVUNivMZMzOue48X2VFmMzfK9p4wP7dopSc6&s=0',
    
   },
   {
     id: 5,
-    image: 'https://seeklogo.com/images/M/meb-milli-egitim-bakanligi-logo-E7B80C5FA9-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMcGTFe52sOjNfJqqWLzpRFHpIkschndtg0bJ2&s=0',
   },
 
     {
     id: 6,
-    image: 'https://seeklogo.com/images/U/UNICEF-logo-BC1D59CDC0-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk8xLPd8lH8ru19bZE1ubm28KTF3ZW9R_9lGR-&s=0',
    
   },
   {
@@ -62,38 +55,38 @@ const data = ref([
   },
   {
     id: 8,
-    image: 'https://seeklogo.com/images/T/TSE-logo-6770CA9F80-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw52ekJQZFdXVA-LMQLODqnn7QRYStzE7CLhGZ&s=0',
    
   },
 
   {
     id: 10,
-    image: 'https://seeklogo.com/images/B/bumn-hadir-untuk-negeri-logo-E0EF5C02ED-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkOaiflbCsXuHHhlFqUh8RgwOvwZ91xj2bVaEY&s=0',
    
   },
   {
     id: 11,
-    image: 'https://seeklogo.com/images/P/phibrows-logo-5E3B771335-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRshqXKm4dMg-weQFjOYQRereza3E1Ji3-m5V-b&s=0',
    
   },
   {
     id: 12,
-    image: 'https://seeklogo.com/images/P/Pantene-logo-DAA1B67CA0-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1QveDnpij5CvvCgOpFRPMsBiIx28zkGKrkdxc&s=0',
    
   },
   {
     id: 13,
-    image: 'https://seeklogo.com/images/B/balenciaga-paris-logo-A8DB2BEDDD-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPeDKh7gXJhUiguYrSJm0T6DU6M6KODpiVIAGQ&s=0',
    
   },
 
   {
     id: 15,
-    image: 'https://seeklogo.com/images/A/ascension-health-logo-AD8B3A7EB0-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYryWjAKgwrssMlSFXwN5oCj2Nw2Lgl9RbzlsjQFA&s',
   },
   {
     id: 16,
-    image: 'https://seeklogo.com/images/P/piramal-group-logo-26066C2128-seeklogo.com.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl-VWDMaK6ExKrCUgO6w-Dsknzys82e0yMy0S-&s=0',
   },
   {
     id: 17,

@@ -5,16 +5,15 @@
         <img :src="logo" alt="logo" class="logo-img" />
       </div>
       <div class="nav-middle">
-        <RouterLink to="/" class="nav-link" v-if="routeName === 'Home'">Home</RouterLink>
+        <RouterLink to="/" class="nav-link" v-if="routeName !== 'Home'">Home</RouterLink>
         <a href="#Home" class="nav-link" :class="activeClass('#Home')" v-else>Home</a>
-        <a href="#company" class="nav-link" :class="activeClass('#company')">Company offers</a>
-        <a href="#categories" class="nav-link" :class="activeClass('#categories')">Job Categories</a>
+        <a href="#company" class="nav-link" :class="activeClass('#company')">Job offers</a>
+        <a href="#categories" class="nav-link" :class="activeClass('#categories')">Job categories</a>
         <a href="#about" class="nav-link" :class="activeClass('#about')">About us</a>
         <a href="#contact" class="nav-link" :class="activeClass('#contact')">Contact</a>
       </div>
       <div class="nav-end" v-if="authStore.token === null">
-        <RouterLink to="/signup" class="nav-link">Sign up</RouterLink>
-        <RouterLink to="/login" class="nav-link btn-apply">Upload Resume</RouterLink>
+        <a href="#company" class="nav-link btn-apply">Apply now</a>
       </div>
       <div class="nav-end" v-else>
         <button class="btn-logout" @click="Logout">logout</button>
@@ -42,7 +41,7 @@
           class="nav-link"
           @click="toggleMenu"
           :class="activeMobileClass('#company')"
-          >Company offers</a
+          >Job offers</a
         >
         <a href="#about" class="nav-link" @click="toggleMenu" :class="activeMobileClass('#about')"
           >About us</a
@@ -66,7 +65,7 @@
         <RouterLink to="/signup" class="nav-link menu-btn active-btn" @click="toggleMenu"
           >Signup</RouterLink
         >
-        <RouterLink to="/login" class="nav-link menu-btn" @click="toggleMenu">Upload Resume</RouterLink>
+        <a href="#company" class="nav-link menu-btn" @click="toggleMenu">Apply now</a>
       </div>
       <div class="nav-end-menu" v-else>
         <button class="menu-btn" @click="Logout">logout</button>

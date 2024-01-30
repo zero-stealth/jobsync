@@ -24,42 +24,49 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-import tech from '@/assets/tech.jpg'
-import marketing from '@/assets/marketing.png'
-import management from '@/assets/management.png'
-import electrician from '@/assets/electrician.jpg'
-import finance from "@/assets/finance.png"
+import analyst from '../assets/analyst.jpg'
+import developer from '../assets/developer.jpg'
+import director from '../assets/director.jpg'
+import scientist from '../assets/scientist.jpg'
+import support from '../assets/support.jpg'
+import technician from '../assets/technician.jpg'
 
 const data = ref([
   {
     id: 1,
-    image: tech,
-    title: 'Tech companies',
-    description: 'Get job in tech related field that suit your needs and qualification'
+    image: technician,
+    title: 'IT Technician',
+    description: 'Collaborates with support specialists to analyze and diagnose computer issues. They also monitor processing functions, install relevant software and perform tests on computer equipment and applications when necessary. '
   },
   {
     id: 2,
-    image: marketing,
-    title: 'Marketing and advertisement ',
-    description: 'Get job in all form marketing comapany like design, social media, brand ambassador among others'
+    image: support,
+    title: 'Support specialist',
+    description: 'Support specialists are responsible for reviewing and solving computer network and hardware problems for a business. '
   },
   {
     id: 3,
-    image: management,
-    title: 'Management ',
-    description: 'Get job in any management required field such as in finance, business, real estate among others'
+    image: developer,
+    title: ' Web developer ',
+    description: 'Web developers design the appearance, navigation and content organization of a website. '
   },
   {
     id: 4,
-    image: electrician,
-    title: 'Electrician ',
-    description: 'work in electric company to solve the energy crisis'
+    image: analyst,
+    title: ' Systems analyst ',
+    description: ' reviews design components and uses their knowledge of information technology to solve business problems. '
   },
   {
     id: 5,
-    image: finance,
-    title: 'Finance ',
-    description: 'work in Finance comapanies and agency to ensure to profit increase and mitigate losses'
+    image: scientist,
+    title: 'Data scientist ',
+    description: 'analyzes and organizes data to determine trends that can influence business decisions.'
+  },
+  {
+    id:6,
+    image:  director,
+    title:  'IT director',
+    description: "oversees the strategy and execution of IT operations for an organization. They ensure that department tasks align with the company's goals and development."
   }
 ])
 </script>

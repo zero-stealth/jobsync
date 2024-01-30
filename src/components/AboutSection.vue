@@ -29,7 +29,7 @@
         <div class="step-icon">
           <LoginIcon class="step-icon-c" />
         </div>
-        <p>Login or create an account</p>
+        <p>Welcome</p>
       </div>
       <div class="step-wrap">
         <div class="step-icon">
@@ -47,7 +47,7 @@
   </div>
 </template>
 <script setup>
-import JobIcon from '../icons/JobIcon.vue'
+import JobIcon from '../icons/SearchIcon.vue'
 import aboutImage from '../assets/about.png'
 import LoginIcon from '../icons/LoginIcon.vue'
 import ApplyIcon from '../icons/ApplyIcon.vue'

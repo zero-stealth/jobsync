@@ -2,7 +2,6 @@
   .category-section {
     gap: 20px;
     padding: 8px;
-    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -48,7 +47,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    justify-content: space-between;
   }
 
   .category-card {
@@ -96,9 +94,6 @@
 
 /* using it as global style for larger devices  */
 @media only screen and (min-width: 48em) {
-  .category-section {
-    height: 100vh;
-  }
 
   .category-header {
     gap: 4px;
@@ -120,7 +115,7 @@
   }
 
   .category-header p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     width: 50%;
 
   }
