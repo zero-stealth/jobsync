@@ -36,13 +36,13 @@ const data = ref([
     id: 1,
     image: technician,
     title: 'IT Technician',
-    description: 'Collaborates with support specialists to analyze and diagnose computer issues. They also monitor processing functions, install relevant software and perform tests on computer equipment and applications when necessary. '
+    description: 'Collaborates with support specialists to analyze and diagnose computer issues.  '
   },
   {
     id: 2,
     image: support,
     title: 'Support specialist',
-    description: 'Support specialists are responsible for reviewing and solving computer network and hardware problems for a business. '
+    description: 'You are responsible for reviewing and solving computer network and hardware problems for a business. '
   },
   {
     id: 3,
@@ -54,19 +54,19 @@ const data = ref([
     id: 4,
     image: analyst,
     title: ' Systems analyst ',
-    description: ' reviews design components and uses their knowledge of information technology to solve business problems. '
+    description: ' Reviews design components and use their knowledge of information technology to solve business problems. '
   },
   {
     id: 5,
     image: scientist,
     title: 'Data scientist ',
-    description: 'analyzes and organizes data to determine trends that can influence business decisions.'
+    description: 'Analyzes and organizes data to determine trends that can influence business decisions.'
   },
   {
     id:6,
     image:  director,
     title:  'IT director',
-    description: "oversees the strategy and execution of IT operations for an organization. They ensure that department tasks align with the company's goals and development."
+    description: "Oversees the strategy and execution of IT operations for an organization."
   }
 ])
 </script>
