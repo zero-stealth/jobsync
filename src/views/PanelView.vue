@@ -9,10 +9,6 @@
           </div>
           <div class="panel-profile">
             <div class="panel-img" :style="{ backgroundImage: `url(${logo})` }"></div>
-            <div class="panel-profile-info">
-              <h1>Maher Agencies</h1>
-              <span>Admin</span>
-            </div>
           </div>
         </div>
         <div class="panel-btn-container">

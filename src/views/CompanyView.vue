@@ -1,7 +1,7 @@
 <template>
   <div class="company-container">
-    <div class="company-info">
-      <div class="company-h-logo" :style="{ 'background-image': `url(${data.logo})` }">
+    <div class="company-info" v-for="data in jobData" :key="data.id">
+      <div class="company-h-logo" :style="{ 'background-image': `url(${data.images})` }">
       </div>
       <div class="company-header">
         <h1>Applying for {{ data.company }}</h1>
@@ -18,7 +18,7 @@
       <div class="company-footer">
         <div class="company-footer-inner">
           <CloackIcon class="company-icon" />
-          <span>{{ data.duration }}</span>
+          <span>{{ data.datePosted }}</span>
         </div>
         <div class="company-footer-inner">
           <WorldIcon class="company-icon" />
@@ -26,15 +26,15 @@
         </div>
         <div class="company-footer-inner">
           <WorkerIcon class="company-icon" />
-          <span>{{ data.staff }}</span>
+          <span>{{ data.employmentType }}</span>
         </div>
         <div class="company-footer-inner">
           <JobIcon class="company-icon" />
-          <span>{{ data.category }}</span>
+          <span>{{ data.title }}</span>
         </div>
         <div class="company-footer-inner">
           <PaymentIcon class="company-icon" />
-          <span>{{ data.salary }}</span>
+          <span>{{ data.salaryRange }}</span>
         </div>
       </div>
       <button @click="applyJob(data.title)" class="btn-f-f">Send Application</button>
@@ -52,19 +52,52 @@ import { useRoute, useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-const SERVER_HOST = import.meta.env.VITE_SERVER_HOST
+const SERVER_RapidAPI_Host = import.meta.env.VITE_X_RapidAPI_Host
+const SERVER_RapidAPI_Key = import.meta.env.VITE_X_RapidAPI_Key
+const SERVER_URL = import.meta.env.VITE_URL
+
+// const SERVER_HOST = import.meta.env.VITE_SERVER_HOST
 const router = useRouter()
+const loading = ref(false)
 const route = useRoute()
-const data = ref({})
+const jobData = ref({})
+
+
+
 
 const getJob = async () => {
   try {
-    const response = await axios.get(`${SERVER_HOST}/data/jobs/${route.params.id}`)
-    data.value = response.data
+    loading.value = true;
+
+    const response = await axios.get(`${SERVER_URL}`, {
+      params: {
+        query: 'Techjob',
+        location: 'Uk',
+        language: 'en_GB',
+        datePosted: 'month',
+        index: '0'
+      },
+      headers: {
+        'X-RapidAPI-Key': SERVER_RapidAPI_Key,
+        'X-RapidAPI-Host': SERVER_RapidAPI_Host
+      }
+    });
+
+    // Assuming response.data is an array of objects with 'id' property
+    const filteredData = response.data.jobs.filter(item => {
+  console.log(route.params.id);
+  return item.id === route.params.id;
+});
+
+    jobData.value = filteredData;
+    console.log(filteredData)
   } catch (err) {
-    console.log(err)
+    console.error(err);
+  } finally {
+    loading.value = false;
   }
-}
+};
+
 
 const applyJob = (name) => {
   router.push({

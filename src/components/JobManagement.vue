@@ -119,11 +119,29 @@ async function updateJob(formData) {
   try {
     const token = JSON.parse(localStorage.getItem('token'))
     const formDataa = new FormData()
-    if (formData.title !== '') {
-      formDataa.append('title', formData.title)
+    if (formData.JobName !== '') {
+      formDataa.append('JobName', formData.JobName)
+    }
+    if (formData.JobTitle !== '') {
+      formDataa.append('JobTitle', formData.JobTitle)
+    }
+    if (formData.staff !== '') {
+      formDataa.append('staff', formData.staff)
+    }
+    if (formData.salary !== '') {
+      formDataa.append('salary', formData.salary)
+    }
+    if (formData.deadline !== '') {
+      formDataa.append('deadline', formData.deadline)
+    }
+    if (formData.qualification !== '') {
+      formDataa.append('qualification', formData.qualification)
     }
     if (formData.logo !== null) {
       formDataa.append('logo', formData.logo)
+    }
+    if (formData.roles !== '') {
+      formDataa.append('roles', formData.roles)
     }
     if (formData.location !== '') {
       formDataa.append('location', formData.location)

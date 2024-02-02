@@ -14,7 +14,7 @@
     gap: 20px;
     display: flex;
     flex-direction: column;
-    background-color: var(--fade-color);
+    background-color: var(--secondary-color);
   
   }
 
@@ -28,39 +28,6 @@
     justify-content: space-between;
   }
 
-  .Account-card {
-    width: 200px;
-    display: flex;
-    padding: 10px;
-    min-width: 200px;
-    border-radius: 8px;
-    flex-direction: column;
-    background-color: var(--dark-primary-color);
-  }
-
-  .Account-card h5 {
-    font-size: 0.8rem;
-    text-transform: capitalize;
-    color: var(--background-color);
-  }
-
-  .Account-card-icon {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .Account-card-icon h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--background-color);
-  }
-
-  .icon-acc {
-    width: 50px;
-    height: 50px;
-    fill: var(--background-color);
-  }
 
 
 
@@ -81,7 +48,7 @@
   }
   .game-cf thead {
     font-size: .6rem;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-light-color);
     color: var(--background-color);
   }
 
@@ -100,8 +67,8 @@
     border-bottom: none;
     text-transform: capitalize;
     color: var(--background-color);
-    border: 1px solid var(--primary-color);
-    background-color: var(--light-primary-color);
+    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-light-color);
 
   }
 
@@ -118,7 +85,7 @@
     
     font-weight: 600;
     text-transform: uppercase;
-    color: var(--light-color);
+    color: var(--background-color);
   }
 
   .game-tbl-img {
@@ -151,7 +118,7 @@
     border-radius: 360px;
     transition: all 0.8s ease 0s;
     -webkit-transition: all 0.8s ease 0s;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
   }
 
 
@@ -160,7 +127,7 @@
     width: 25px;
     height: 25px;
     border-radius: 360%;
-    background-color: var(--light-primary-color);
+    background-color: var(--light-secondary-color);
   }
 
   .Account-toggle span {
@@ -175,7 +142,7 @@
   }
 
   .on span {
-    color: var(--light-primary-color);
+    color: var(--light-secondary-color);
   }
 
   .off {
@@ -210,7 +177,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 
 }
 
@@ -244,9 +211,6 @@
 
 
 
-.
-
-
 /* using it as global style for larger devices  */
 @media only screen and (min-width: 48em) {
   .game-game-p {
@@ -263,7 +227,7 @@
 
   .game-cf thead {
     font-size: .7rem;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--background-color);
   }
 

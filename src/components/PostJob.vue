@@ -2,10 +2,13 @@
   <div>
     <form @submit.prevent="handleSubmit" enctype="multipart/form-data" class="form-container">
       <div class="form-wrapper">
-        <h1>Add a job</h1>
         <div class="form-group">
           <label for="name">Job Name:</label>
-          <input v-model="title" type="text" class="form-g-input" placeholder="name" id="name" />
+          <input v-model="JobName" type="text" class="form-g-input" placeholder="Software engineer " id="JobName" />
+        </div>
+        <div class="form-group">
+          <label for="name">Job Title:</label>
+          <input v-model="JobTitle" type="text" class="form-g-input" placeholder="Engineer" id="JobTitle" />
         </div>
         <div class="form-group">
           <label for="logo">Company Logo:</label>
@@ -28,6 +31,58 @@
           />
         </div>
         <div class="form-group">
+          <label for="duration">Roles:</label>
+          <input
+            v-model="roles"
+            type="text"
+            class="form-g-input"
+            placeholder="What will you do"
+            id="roles"
+          />
+        </div>
+        <div class="form-group">
+          <label for="duration">Salary:</label>
+          <input
+            v-model="salary"
+            type="text"
+            class="form-g-input"
+            placeholder="$100"
+            id="salary"
+          />
+        </div>
+        <div class="form-group">
+          <label for="duration">Staff:</label>
+          <input
+            v-model="staff"
+            type="text"
+            class="form-g-input"
+            placeholder="100 - 150"
+            id="staff"
+          />
+        </div>
+      </div>
+      <div class="form-wrapper">
+        <div class="form-group">
+          <label for="duration">Qualification:</label>
+          <input
+            v-model="qualification"
+            type="text"
+            class="form-g-input"
+            placeholder="A degree"
+            id="qualification"
+          />
+        </div>
+        <div class="form-group">
+          <label for="duration">Deadline:</label>
+          <input
+            v-model="deadline"
+            type="text"
+            class="form-g-input"
+            placeholder="2024/02/12"
+            id="deadline"
+          />
+        </div>
+        <div class="form-group">
           <label for="duration">Duration:</label>
           <input
             v-model="duration"
@@ -38,7 +93,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="category">job category:</label>
+          <label for="category">category:</label>
           <input
             v-model="category"
             type="text"
@@ -77,7 +132,13 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-const title = ref('')
+const JobName = ref('')
+const JobTitle = ref('')
+const staff = ref('')
+const salary = ref('')
+const deadline = ref('')
+const qualification = ref('')
+const roles = ref('')
 const logo = ref(null)
 const duration = ref('')
 const location = ref('')
@@ -96,17 +157,29 @@ function handleFileUpload(event) {
 
 async function handleSubmit() {
   if (
-    title.value.trim() !== '' &&
+    JobName.value.trim() !== '' &&
     logo.value !== null &&
-    location.value.trim() !== '' &&
-    duration.value.trim() !== '' &&
-    company.value.trim() !== '' &&
-    category.value.trim() !== '' &&
+    JobTitle.value.trim() !== '' &&
+    staff.value.trim() !== '' &&
+    salary.value.trim() !== '' &&
+    deadline.value.trim() !== '' &&
+    qualification.value.trim() !== ''&&
+    roles.value.trim() !== ''&&
+    location.value.trim() !== ''&&
+    duration.value.trim() !== ''&&
+    company.value.trim() !== ''&&
+    category.value.trim() !== ''&&
     description.value.trim() !== ''
   ) {
     try {
       const formData = new FormData()
-      formData.append('title', title.value)
+      formData.append('JobName', JobName.value)
+      formData.append('JobTitle', JobTitle.value)
+      formData.append('staff', staff.value)
+      formData.append('salary', salary.value)
+      formData.append('deadline', deadline.value)
+      formData.append('qualification', qualification.value)
+      formData.append('roles', roles.value)
       formData.append('logo', logo.value)
       formData.append('location', location.value)
       formData.append('duration', duration.value)

@@ -17,7 +17,7 @@
     overflow: hidden;
     overflow-x: auto;
     overflow-y: scroll;
-    background-color: var(--fade-color);
+    background-color: var(--secondary-light-color);
   }
 
   table {
@@ -26,7 +26,7 @@
 
   .acc-m thead {
     font-size: 0.7rem;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--background-color);
   }
 
@@ -44,7 +44,7 @@
     border-bottom: none;
     text-transform: capitalize;
     color: var(--background-color);
-    border: 4px solid var(--primary-color);
+    border: 4px solid var(--secondary-color);
   }
 
   .acc-m th {
@@ -59,6 +59,11 @@
     align-items: center;
   }
 
+  .form-g-input {
+    color: var(--dark-color);
+    background-color: var(--light-color);
+  }
+
   .Account-delete {
     display: flex;
     cursor: pointer;
@@ -69,7 +74,7 @@
   .icon-delete {
     width: 24px;
     height: 24px;
-    fill: var(--tertiary-color);
+    fill: var(--background-color);
   }
 }
 
@@ -83,7 +88,7 @@
   overflow: hidden;
   overflow-y: auto;
   flex-direction: column;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .mobile-exit {

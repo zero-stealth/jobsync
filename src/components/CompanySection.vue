@@ -4,18 +4,18 @@
         <h1>Apply for a job now</h1>
         <span></span>
       </div>
-    <div v-if="data.length > 0" class="popular-component">
-      <div  v-for="item in data[0]" :key="item._id">
+    <div v-if="jobData.length > 0" class="popular-component">
+      <div  v-for="item in jobData" :key="item.id">
         <div class="popular-card">
           <div class="popular-header">
             <div class="p-header-inner">
-              <img :src="item.logo" :alt="item.job" class="popular-img" />
+              <img :src="item.image" :alt="item.company" class="popular-img" />
               <div class="popular-header-title">
                 <h1>{{ item.company }}</h1>
                 <span>{{ item.location }}</span>
               </div>
             </div>
-            <button class="popular-btn" @click="ApplyJob(item._id, item.company)">Get job</button>
+            <button class="popular-btn" @click="ApplyJob(item.id, item.company)">Get job</button>
           </div>
           <div class="popular-info-inner">
             <div class="info-inner-has">
@@ -23,7 +23,7 @@
               <div class="has-contain">
                 <div class="has-inner">
                   <CloackIcon class="popular-icon-inner" />
-                  <span>{{ item.duration }}</span>
+                  <span>{{ item.datePosted }}</span>
                 </div>
                 <div class="has-inner">
                   <WorkerIcon class="popular-icon-inner" />
@@ -32,20 +32,9 @@
               </div>
             </div>
           </div>
-          <div class="popular-footer">
-            <div class="popular-footer-inner">
-              <JobIcon class="popular-icon" />
-              <span>{{ item.category }}</span>
-            </div>
-            <div class="popular-footer-inner">
-              <PaymentIcon class="popular-icon" />
-              <span>{{ item.salary }}</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
-
     <div class="nothing-contain" v-else>
       <img :src="nothingImage" alt="empty" class="nothingImage" />
     </div>
@@ -53,28 +42,55 @@
 </template>
 
 <script setup>
-import axios from 'axios'
+const SERVER_RapidAPI_Host = import.meta.env.VITE_X_RapidAPI_Host
+const SERVER_RapidAPI_Key = import.meta.env.VITE_X_RapidAPI_Key
+// const SERVER_HOST = import.meta.env.VITE_SERVER_HOST
+const SERVER_URL = import.meta.env.VITE_URL
 import nothingImage from '../assets/nothing.gif'
 import WorkerIcon from '../icons/WorkerIcon.vue'
-import PaymentIcon from '../icons/PaymentIcon.vue'
 import CloackIcon from '../icons/CloackIcon.vue'
-import JobIcon from '../icons/JobIcon.vue'
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
+import axios from 'axios'
 
-const SERVER_HOST = import.meta.env.VITE_SERVER_HOST
-
-const data = ref([])
+const jobData = ref([])
 const router = useRouter()
+const loading = ref(false)
+// const getJob = async () => {
+//   try {
+//     const response = await axios.get(`${SERVER_HOST}/jobData/jobs/`)
+//     jobData.value = response.jobData.length > 0 ? [response.jobData] : []
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
 
 const getJob = async () => {
   try {
-    const response = await axios.get(`${SERVER_HOST}/data/jobs/`)
-    data.value = response.data.length > 0 ? [response.data] : []
+    loading.value = true;
+
+    const response = await axios.get(`${SERVER_URL}`, {
+      params: {
+        query: 'Techjob',
+        location: 'Uk',
+        language: 'en_GB',
+        datePosted: 'month',
+        index: '0'
+      },
+      headers: {
+        'X-RapidAPI-Key': SERVER_RapidAPI_Key,
+        'X-RapidAPI-Host': SERVER_RapidAPI_Host
+      }
+    });
+
+    jobData.value = response.data.jobs;
   } catch (err) {
-    console.log(err)
+    console.error(err);
+  } finally {
+    loading.value = false;
   }
-}
+};
+
 
 onMounted(() => {
   getJob()

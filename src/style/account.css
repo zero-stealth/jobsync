@@ -22,7 +22,7 @@
     overflow: hidden;
     overflow-x: scroll;
     overflow-y: hidden;
-    background-color: var( --primary-color);
+    background-color: var( --secondary-color);
   }
 
   .account-info {
@@ -72,7 +72,7 @@
     overflow: hidden;
     overflow-x: auto;
     overflow-y: scroll;
-    background-color: var( --primary-color);
+    background-color: var( --secondary-color);
   }
 
   .hide-ds {
@@ -85,13 +85,13 @@
 
   .gm-m {
     overflow-x: auto;
-    background-color: var( --primary-color);
+    background-color: var( --secondary-color);
 
   }
 
   .acc-m thead {
     font-size: .7rem;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--background-color);
   }
 
@@ -110,8 +110,8 @@
     cursor: pointer;
     text-transform: capitalize;
     color: var(--background-color);
-    border: 3px solid var(--primary-color);
-    background-color: var(--light-primary-color);
+    border: 3px solid var(--secondary-color);
+    background-color: var(--light-secondary-color);
 
   }
 
@@ -151,14 +151,14 @@
     border-radius: 360px;
     transition: all 0.8s ease 0s;
     -webkit-transition: all 0.8s ease 0s;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
   }
 
   .account-mode {
     width: 20px;
     height: 20px;
     border-radius: 360%;
-    background-color: var(--light-primary-color);
+    background-color: var(--light-secondary-color);
   }
 
   .account-toggle span {
@@ -193,7 +193,7 @@
   overflow: hidden;
   overflow-y: auto;
   flex-direction: column;
-  background-color: var(--light-primary-color);
+  background-color: var(--light-secondary-color);
 }
 
 .mobile-exit {
