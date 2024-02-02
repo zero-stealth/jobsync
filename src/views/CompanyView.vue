@@ -1,7 +1,7 @@
 <template>
   <div class="company-container">
     <div class="company-info" v-for="data in jobData" :key="data.id">
-      <div class="company-h-logo" :style="{ 'background-image': `url(${data.images})` }">
+      <div class="company-h-logo" :style="{ 'background-image': `url(${data.image})` }">
       </div>
       <div class="company-header">
         <h1>Applying for {{ data.company }}</h1>
@@ -83,14 +83,12 @@ const getJob = async () => {
       }
     });
 
-    // Assuming response.data is an array of objects with 'id' property
     const filteredData = response.data.jobs.filter(item => {
-  console.log(route.params.id);
+
   return item.id === route.params.id;
 });
 
     jobData.value = filteredData;
-    console.log(filteredData)
   } catch (err) {
     console.error(err);
   } finally {

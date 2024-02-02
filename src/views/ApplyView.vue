@@ -75,13 +75,13 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import axios from 'axios'
 
 const SERVER_HOST = import.meta.env.VITE_SERVER_HOST
 const router = useRouter()
 const route = useRoute()
-const data = ref({})
+// const data = ref({})
 const fullname = ref('')
 const email = ref('')
 const link = ref('')
@@ -116,14 +116,14 @@ const goBack = () => {
   router.go(-1)
 }
 
-const getJob = async () => {
-  try {
-    const response = await axios.get(`${SERVER_HOST}/data/jobs/${route.params.id}`)
-    data.value = response.data
-  } catch (err) {
-    console.log(err)
-  }
-}
+// const getJob = async () => {
+//   try {
+//     const response = await axios.get(`${SERVER_HOST}/data/jobs/${route.params.id}`)
+//     data.value = response.data
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
 
 async function handleSubmit() {
   if (
@@ -136,6 +136,7 @@ async function handleSubmit() {
   ) {
     try {
       const formData = new FormData()
+      formData.append('job', route.params.job)
       formData.append('fullname', fullname.value)
       formData.append('email', email.value)
       formData.append('link', link.value)
@@ -143,11 +144,9 @@ async function handleSubmit() {
       formData.append('cv', cv.value)
       formData.append('certificate', certificate.value)
 
-      const user = JSON.parse(localStorage.getItem('token'))
-      await axios.post(`${SERVER_HOST}/data/jobs/`, formData, {
+      await axios.post(`${SERVER_HOST}/send-email`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${user}`
         }
       })
       alert('Application sent successfully!')
@@ -160,9 +159,9 @@ async function handleSubmit() {
   }
 }
 
-onMounted(() => {
-  getJob()
-})
+// onMounted(() => {
+//   getJob()
+// })
 </script>
 
 <style scoped>
