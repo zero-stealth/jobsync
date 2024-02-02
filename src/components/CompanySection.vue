@@ -1,11 +1,11 @@
 <template>
   <div class="popular-section">
-    <h1>
-      <span>{{ data.length }} company </span> available
-    </h1>
-
-    <div v-if="data.length > 0">
-      <div class="popular-component" v-for="item in data[0]" :key="item._id">
+    <div class="category-title">
+        <h1>Apply for a job now</h1>
+        <span></span>
+      </div>
+    <div v-if="data.length > 0" class="popular-component">
+      <div  v-for="item in data[0]" :key="item._id">
         <div class="popular-card">
           <div class="popular-header">
             <div class="p-header-inner">
@@ -22,11 +22,11 @@
               <h1>{{ item.title }}</h1>
               <div class="has-contain">
                 <div class="has-inner">
-                  <CloackIcon class="popular-icon" />
+                  <CloackIcon class="popular-icon-inner" />
                   <span>{{ item.duration }}</span>
                 </div>
                 <div class="has-inner">
-                  <WorkerIcon class="popular-icon" />
+                  <WorkerIcon class="popular-icon-inner" />
                   <span>{{ item.staff }}</span>
                 </div>
               </div>
@@ -91,6 +91,6 @@ const ApplyJob = (id, name) => {
 }
 </script>
 
-<style>
+<style scoped>
 @import '@/style/company.css';
 </style>

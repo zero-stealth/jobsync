@@ -8,7 +8,7 @@
     <p>Contact us at:</p>
     <ul>
       <li>Email: jobsyncnet@gmail.com</li>
-      <li>Phone: +1 5738614413 </li>
+      <li>Phone: + 15738614413 </li>
     </ul>
   </div>
 </template>

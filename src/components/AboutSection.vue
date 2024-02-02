@@ -20,37 +20,10 @@
         <img :src="aboutImage" alt="about image" class="about-image" />
       </div>
     </div>
-    <div class="abt-steps">
-      <span>Your journey begins here</span>
-      <h1>Follow these steps to get started</h1>
-    </div>
-    <div class="step-contain">
-      <div class="step-wrap">
-        <div class="step-icon">
-          <LoginIcon class="step-icon-c" />
-        </div>
-        <p>Welcome</p>
-      </div>
-      <div class="step-wrap">
-        <div class="step-icon">
-          <JobIcon class="step-icon-c" />
-        </div>
-        <p>Search for the company you want</p>
-      </div>
-      <div class="step-wrap">
-        <div class="step-icon">
-          <ApplyIcon class="step-icon-c" />
-        </div>
-        <p>Apply for your dream company</p>
-      </div>
-    </div>
   </div>
 </template>
 <script setup>
-import JobIcon from '../icons/SearchIcon.vue'
 import aboutImage from '../assets/about.png'
-import LoginIcon from '../icons/LoginIcon.vue'
-import ApplyIcon from '../icons/ApplyIcon.vue'
 </script>
 <style>
 @import '@/style/about.css';

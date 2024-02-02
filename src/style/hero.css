@@ -7,12 +7,11 @@
     border-radius: 20px;
     background-size: cover;
     flex-direction: column;
-    color: var(--light-color);
+    color: var(--dark-color);
     background-position: center;
     background-repeat: no-repeat;
     justify-content: space-between;
-    background-color: var(--secondary-color);
-    background-image: url('../assets/background.png');
+    background-color: var(--light-color);
   }
 
 
@@ -23,8 +22,9 @@
     flex-direction: column;
   }
 
+
   .hero-img h1 span {
-    color: var(--primary-color);
+    color: var(--secondary-color);
   }
 
 
@@ -154,7 +154,7 @@
   }
 
   .hero-image {
-    width: 330px;
+    width: 300px;
     object-fit: cover;
     object-position: center;
   }
@@ -229,10 +229,6 @@
     padding-top: 10px;
   }
 
-  .hero-img-shape {
-    width: 300px;
-    height: 300px;
-  }
 
   .hero-form {
     width: 300px;

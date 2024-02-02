@@ -40,18 +40,19 @@
   .abt-h span {
     font-size: 1rem;
     font-weight: 300;
-    color: var(--primary-color);
+    color: var(--secondary-color);
   }
 
   .abt-h h1 {
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--primary-color);
   }
 
   .abt-h span:last-child {
     width: 20%;
     height: 4px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
   }
 
   .abt-info p {
@@ -64,7 +65,7 @@
 
   .abt-info li {
     list-style: square;
-    color: var(--primary-color);
+    color: var(--secondary-color);
   }
 
   .abt-list {

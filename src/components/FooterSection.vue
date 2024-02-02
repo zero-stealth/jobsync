@@ -1,47 +1,45 @@
 <template>
   <div class="footer-component">
-  
     <div class="footer-container">
       <div class="footer-wrap">
         <div class="foot-part">
           <img :src="logo" alt="logo" class="footer-logo" />
-          <p>
-            Ensuring you <span @click="goAdmin()">get</span>  the job 
-            that you deserve
-          </p>
+          <p>Ensuring you <span @click="goAdmin()">get</span> the job that you deserve</p>
 
           <div class="info-contain">
+            <div class="info-foot">
+              <span>Los Angeles Ave, California CA 90036</span>
+            </div>
             <div class="info-foot">
               <EmailIcon class="footer-icon" />
               <span>jobsyncnet@gmail.com</span>
             </div>
-            <div class="info-foot">
-              <LocationIcon class="footer-icon" />
-              <span>P.o.box 5557- 0100</span>
-            </div>
+
             <div class="info-foot">
               <PhoneIcon class="footer-icon" />
-              <span>+ {{ phoneNumber }}</span>
+              <span>+ 1 (573) 861-4413</span>
             </div>
           </div>
         </div>
         <div class="foot-part-contain">
           <div class="foot-part">
-          <h1>Quick links</h1>
-          <RouterLink to="/" class="foot-link" v-if="routeName === 'Home'">Home</RouterLink>
-          <a href="#job" class="foot-link" :class="activeClass('#Home')" v-else>Home</a>
-          <a href="#company" class="foot-link" :class="activeClass('#company')">job offers</a>
-          <a href="#categories" class="foot-link" :class="activeClass('#categories')">Categories</a>
-          <a href="#about" class="foot-link" :class="activeClass('#about')">About us</a>
-          <a href="#contact" class="foot-link" :class="activeClass('#contact')">Contact</a>
-        </div>
-        <div class="foot-part">
-          <h1>Resource</h1>
-          <RouterLink to="/support" class="foot-link">support</RouterLink>
-          <RouterLink to="/policy" class="foot-link">Policy</RouterLink>
-          <RouterLink to="/Disclaimer" class="foot-link">Disclaimer</RouterLink>
-          <RouterLink to="/Terms" class="foot-link">Terms & Condition</RouterLink>
-        </div>
+            <h1>Quick links</h1>
+            <RouterLink to="/" class="foot-link" v-if="routeName === 'Home'">Home</RouterLink>
+            <a href="#job" class="foot-link" :class="activeClass('#Home')" v-else>Home</a>
+            <a href="#company" class="foot-link" :class="activeClass('#company')">job offers</a>
+            <a href="#categories" class="foot-link" :class="activeClass('#categories')"
+              >Categories</a
+            >
+            <a href="#about" class="foot-link" :class="activeClass('#about')">About us</a>
+            <a href="#contact" class="foot-link" :class="activeClass('#contact')">Contact</a>
+          </div>
+          <div class="foot-part">
+            <h1>Resource</h1>
+            <RouterLink to="/support" class="foot-link">support</RouterLink>
+            <RouterLink to="/policy" class="foot-link">Policy</RouterLink>
+            <RouterLink to="/Disclaimer" class="foot-link">Disclaimer</RouterLink>
+            <RouterLink to="/Terms" class="foot-link">Terms & Condition</RouterLink>
+          </div>
         </div>
         <div class="foot-part">
           <h1>Message us</h1>
@@ -78,7 +76,7 @@
 </template>
 
 <script setup>
-import logo from '@/assets/logo.png'
+import logo from '@/assets/logo-light.png'
 import { useRouter } from 'vue-router'
 import PhoneIcon from '@/icons/PhoneIcon.vue'
 import EmailIcon from '@/icons/EmailIcon.vue'
@@ -86,7 +84,6 @@ import { onMounted, ref, watchEffect } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import TwitterIcon from '@/icons/TwitterIcon.vue'
 import FacebookIcon from '@/icons/FacebookIcon.vue'
-import LocationIcon from '@/icons/LocationIcon.vue'
 import TelegramIcon from '@/icons/TelegramIcon.vue'
 import InstagramIcon from '@/icons/InstagramIcon.vue'
 import LinkedinIcon from '@/icons/LinkedinIcon.vue'
@@ -98,7 +95,6 @@ const router = useRouter()
 const errMessage = ref('')
 const routeName = ref('Home')
 const phoneNumber = ref('15738614413')
-
 
 onMounted(() => {
   watchEffect(() => {
@@ -118,7 +114,6 @@ const activeClass = (link) => {
 
   return style.value
 }
-
 
 const openWhatsapp = () => {
   window.open(`https://wa.me/${phoneNumber.value}?text=Hi welcome to JobSync Network`, '_blank')

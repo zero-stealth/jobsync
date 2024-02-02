@@ -2,7 +2,7 @@
   <div class="testimonial-container">
     <div class="testimonial-header">
       <span>Testimonials</span>
-      <h1>What's our clients say</h1>
+      <h1>Reviews</h1>
     </div>
     <div class="testimonial-inner">
       <div class="testimonial-top">

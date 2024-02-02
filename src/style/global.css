@@ -4,12 +4,12 @@
 * {
 
   /* colors */
-  --dark-color : #020202ff;
-  --light-color : #E1F0DA;
-  --primary-color: rgb(228, 102, 40);
-  --secondary-color: #165253ff;
+    --dark-color : #020202ff;
+  --light-color : #f0f3ee;
+  --primary-color: #5CB85C;
+  --secondary-color: #C74642;
   --background-color: #ffffffff;
-  --secondary-light-color: #215958ff;
+  --secondary-light-color: #D9534F;
   --bar-shadow: rgba(2, 2, 3, 0.2) 0px 7px 29px 0px;
   --nav-shadow: 0 8px 32px 0 rgba(147, 154, 247, 0.37);
 
