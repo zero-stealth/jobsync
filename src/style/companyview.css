@@ -48,11 +48,19 @@
     color: var(--primary-color);
   }
 
+
+  .Read-d {
+    padding: 10px;
+    font-size: .8rem;
+    color: var(--background-color);
+    background-color: var(--primary-color);
+  }
+
   .company-h-logo {
     width: 100%;
     height: 150px;
     border-radius: 12px;
-    background-size: cover;
+    background-size: containyyyy;
     background-position: top center;
     background-repeat: no-repeat;
   }

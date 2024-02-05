@@ -1,9 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
-import LoginView from '@/views/LoginView.vue';
-import AdminLoginView from '@/views/AdminLoginView.vue';
-import AdminSigninView from '@/views/AdminSigninView.vue';
-import SignupView from '@/views/SignupView.vue';
 import ResetView from '@/views/ResetView.vue';
 import SupportView from '@/views/SupportView.vue';
 import PanelView from '@/views/PanelView.vue';
@@ -21,38 +17,6 @@ const routes = [
     component: HomeView,
     meta: {
       title: "JobSync Network - Home",
-    }
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: LoginView,
-    meta: {
-      title: "JobSync Network - Login",
-    }
-  },
-  {
-    path: '/p-login',
-    name: 'AdminLogin',
-    component: AdminLoginView,
-    meta: {
-      title: "JobSync Network - Admin Login",
-    }
-  },
-  {
-    path: '/p-signup',
-    name: 'AdminSignin',
-    component: AdminSigninView,
-    meta: {
-      title: "JobSync Network - Admin Signin",
-    }
-  },
-  {
-    path: '/signup',
-    name: 'Signup',
-    component: SignupView,
-    meta: {
-      title: "JobSync Network - Signup",
     }
   },
   {

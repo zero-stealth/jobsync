@@ -13,7 +13,14 @@
       </div>
       <div class="company-inner">
         <h2>Job description</h2>
-        <p>{{ data.description }}</p>
+        <p>
+          {{ isFullDescription ? data.description : truncateDescription(data.description) }}
+          <span v-if="data.description.length > 100">
+            <button @click="toggleDescription" class="Read-d">
+              {{ isFullDescription ? 'Read Less' : 'Read More' }}
+            </button>
+          </span>
+        </p>
       </div>
       <div class="company-footer">
         <div class="company-footer-inner">
@@ -56,14 +63,19 @@ const SERVER_RapidAPI_Host = import.meta.env.VITE_X_RapidAPI_Host
 const SERVER_RapidAPI_Key = import.meta.env.VITE_X_RapidAPI_Key
 const SERVER_URL = import.meta.env.VITE_URL
 
-// const SERVER_HOST = import.meta.env.VITE_SERVER_HOST
 const router = useRouter()
 const loading = ref(false)
 const route = useRoute()
 const jobData = ref({})
+const isFullDescription = ref(false);
 
+const truncateDescription = (description) => {
+  return description.slice(0, 200) + '...';
+};
 
-
+const toggleDescription = () => {
+  isFullDescription.value = !isFullDescription.value;
+};
 
 const getJob = async () => {
   try {
@@ -72,7 +84,7 @@ const getJob = async () => {
     const response = await axios.get(`${SERVER_URL}`, {
       params: {
         query: 'Techjob',
-        location: 'Uk',
+        location: 'Canada, Usa',
         language: 'en_GB',
         datePosted: 'month',
         index: '0'
@@ -84,9 +96,8 @@ const getJob = async () => {
     });
 
     const filteredData = response.data.jobs.filter(item => {
-
-  return item.id === route.params.id;
-});
+      return item.id === route.params.id;
+    });
 
     jobData.value = filteredData;
   } catch (err) {
@@ -96,19 +107,18 @@ const getJob = async () => {
   }
 };
 
-
 const applyJob = (name) => {
   router.push({
     name: 'Apply',
     params: {
       job: name
     }
-  })
-}
+  });
+};
 
 onMounted(() => {
-  getJob()
-})
+  getJob();
+});
 </script>
 
 <style scoped>

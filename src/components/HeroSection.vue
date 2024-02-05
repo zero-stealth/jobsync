@@ -54,7 +54,7 @@ const getJob = async () => {
     const response = await axios.get(`${SERVER_URL}`, {
       params: {
         query: 'Techjob',
-        location: 'Uk',
+        location: 'Canada',
         language: 'en_GB',
         datePosted: 'month',
         index: '0'

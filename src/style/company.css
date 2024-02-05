@@ -18,14 +18,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
   }
 
   .category-title {
     gap: 4px;
     display: flex;
     flex-direction: column;
-    
   }
 
   .category-title span {
@@ -39,20 +37,24 @@
     font-size: 1.2rem;
   }
 
-  
   .popular-section h1 span {
     color: var(--secondary-color);
   }
 
   .popular-component {
     gap: 20px;
-    width: 100%;
+    width: 100vw;
     padding: 10px;
     display: flex;
     overflow: hidden;
     overflow-x: auto;
     overflow-y: hidden;
   }
+
+  *::-webkit-scrollbar {
+    display: none;
+}
+
 
   .popular-card {
     gap: 20px;
@@ -67,39 +69,32 @@
     color: var(--dark-color);
     text-transform: capitalize;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
   }
 
   .popular-card:hover {
     border: none;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    box-shadow:
+      rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
   }
 
   .popular-header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-
-  .p-header-inner {
     gap: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
 
-  .p-header-inner h1 {
+  .popular-header h1 {
     font-weight: 600;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
-
-
 
   .popular-btn {
     padding: 10px;
     cursor: pointer;
-    font-size: .8rem;
-    border-radius: 12px;
+    font-size: 0.8rem;
+    border-radius: 4px;
     background: transparent;
     color: var(--background-color);
     background-color: var(--secondary-color);
@@ -112,20 +107,22 @@
     background-color: var(--secondary-light-color);
   }
 
-  .popular-info-inner h1 {
-    font-size: 1.2rem;
-  }
-
   .info-inner-has {
-    gap: 10px;
+    gap: 20px;
     display: flex;
     flex-direction: column;
   }
 
-  .info-inner-has h1 {
-    font-size: 1rem;
+  .has-inner-top {
+    gap: 10px;
+    display: flex;
+    align-items: center;
   }
 
+  .info-inner-has h1 {
+    font-size: 1rem;
+    color: var(--secondary-color);
+  }
 
   .has-contain {
     gap: 10px;
@@ -147,14 +144,14 @@
   }
 
   .popular-icon-inner {
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
     fill: var(--dark-color);
   }
 
-
   .has-inner span {
-    font-weight: 400;
+    font-weight: 200;
+    font-size: 0.8rem;
   }
 
   .popular-img {
@@ -178,8 +175,6 @@
     align-items: center;
   }
 
-
-
   .popular-icon {
     height: 24px;
     width: 24px;
@@ -201,7 +196,7 @@
 /* using it as global style for larger devices  */
 @media only screen and (min-width: 48em) {
   .popular-component {
-    padding: 10px;
+    padding: 20px 50px;
   }
 
   .category-header {
@@ -212,8 +207,7 @@
 
   .popular-card {
     min-width: 500px;
-
-   }
+  }
 
   .category-title {
     gap: 4px;
@@ -221,20 +215,19 @@
     justify-content: center;
   }
 
-  
   .category-title h1 {
     font-size: 1.5rem;
   }
-  
 
-  .p-header-inner h1 {
+  .popular-header h1 {
     font-size: 1rem;
+    color: var(--secondary-color);
   }
 
   .popular-btn {
     font-size: 1rem;
   }
-  
+
   .popular-footer-inner {
     justify-content: center;
   }

@@ -4,7 +4,7 @@
 * {
 
   /* colors */
-  --dark-color : #020202ff;
+  --dark-color : #252525;
   --light-color : #f0f3ee;
   --primary-color: #5CB85C;
   --secondary-color: #C74642;
@@ -88,16 +88,13 @@
 *::-webkit-scrollbar-thumb {
   background-color: var(--secondary-color);
   border: 4px solid var(--dark-color);
+  border-radius: 12px;
   
 }
 
 /* using it as global style for larger devices  */
 @media only screen and (min-width: 48em) {
   /* Works on Chrome, Edge, and Safari */
-    *::-webkit-scrollbar {
-      width: 6px;
-      height: 3px;
-    }
 
 }
   /* ipad pro screens & laptop */
