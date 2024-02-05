@@ -1,5 +1,6 @@
 # jobify
 
+Get jobs easily
 ## Project Setup
 
 ```sh
