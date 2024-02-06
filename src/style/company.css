@@ -46,10 +46,14 @@
     width: 100vw;
     padding: 10px;
     display: flex;
-    overflow: hidden;
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-direction: column;
   }
+
+  .popular-component p {
+    font-size: .9rem;
+    text-transform: capitalize;
+  }
+ 
 
   *::-webkit-scrollbar {
     display: none;
@@ -179,6 +183,30 @@
     height: 24px;
     width: 24px;
     fill: var(--secondary-color);
+  }
+
+  .pagination-buttons {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .previous-btn{
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+  }
+
+  .next-btn{
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    color: var(--background-color);
+    background-color: var(--dark-color);
   }
 
   .nothing-contain {
