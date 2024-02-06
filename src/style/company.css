@@ -20,6 +20,37 @@
     justify-content: space-between;
   }
 
+  .filter-component {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .filter-component p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color);
+  }
+
+  .filter-dropdowns {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .filter-dropdowns select {
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: .8rem;
+    font-weight: 300;
+    border-radius: 4px;
+    color: var(--background-color);
+    background-color: var(--primary-color);
+  }
+
   .category-title {
     gap: 4px;
     display: flex;

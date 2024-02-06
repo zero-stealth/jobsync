@@ -1,11 +1,10 @@
 <template>
   <div class="company-container">
     <div class="company-info" v-for="data in jobData" :key="data.id">
-      <div class="company-h-logo" :style="{ 'background-image': `url(${data.image})` }">
-      </div>
+      <div class="company-h-logo" :style="{ 'background-image': `url(${data.image})` }"></div>
       <div class="company-header">
         <h1>Applying for {{ data.company }}</h1>
-          <h2></h2>
+        <h2></h2>
       </div>
       <div class="company-inner">
         <h2>Job title</h2>
@@ -50,41 +49,43 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+import { useRoute, useRouter } from 'vue-router'
 import WorldIcon from '../icons/WorldIcon.vue'
 import WorkerIcon from '../icons/WorkerIcon.vue'
 import PaymentIcon from '../icons/PaymentIcon.vue'
 import CloackIcon from '../icons/CloackIcon.vue'
 import JobIcon from '../icons/JobIcon.vue'
-import { useRoute, useRouter } from 'vue-router'
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
 
 const SERVER_RapidAPI_Host = import.meta.env.VITE_X_RapidAPI_Host
 const SERVER_RapidAPI_Key = import.meta.env.VITE_X_RapidAPI_Key
 const SERVER_URL = import.meta.env.VITE_URL
 
 const router = useRouter()
-const loading = ref(false)
 const route = useRoute()
-const jobData = ref({})
-const isFullDescription = ref(false);
+const jobData = ref([])
+const loading = ref()
+const isFullDescription = ref(false)
+const job = ref(localStorage.getItem('job') || 'Engineering')
+const location = ref(localStorage.getItem('location') || 'Canada')
 
 const truncateDescription = (description) => {
-  return description.slice(0, 200) + '...';
-};
+  return description.slice(0, 200) + '...'
+}
 
 const toggleDescription = () => {
-  isFullDescription.value = !isFullDescription.value;
-};
+  isFullDescription.value = !isFullDescription.value
+}
 
 const getJob = async () => {
   try {
-    loading.value = true;
+    loading.value = true
 
     const response = await axios.get(`${SERVER_URL}`, {
       params: {
-        query: 'Engineering;Developer;Programmer' ,
-        location: 'Canada;Usa',
+        query: job.value,
+        location: location.value,
         language: 'en_GB',
         datePosted: 'month',
         index: '0'
@@ -93,19 +94,19 @@ const getJob = async () => {
         'X-RapidAPI-Key': SERVER_RapidAPI_Key,
         'X-RapidAPI-Host': SERVER_RapidAPI_Host
       }
-    });
+    })
 
-    const filteredData = response.data.jobs.filter(item => {
-      return item.id === route.params.id;
-    });
+    const filteredData = response.data.jobs.filter((item) => {
+      return item.id === route.params.id
+    })
 
-    jobData.value = filteredData;
+    jobData.value = filteredData
   } catch (err) {
-    console.error(err);
+    console.error(err)
   } finally {
-    loading.value = false;
+    loading.value = false
   }
-};
+}
 
 const applyJob = (name) => {
   router.push({
@@ -113,12 +114,12 @@ const applyJob = (name) => {
     params: {
       job: name
     }
-  });
-};
+  })
+}
 
 onMounted(() => {
-  getJob();
-});
+  getJob()
+})
 </script>
 
 <style scoped>

@@ -5,12 +5,25 @@
       <span></span>
     </div>
     <div v-if="pagedJobs.length > 0" class="popular-component">
-      <p>page number {{ currentPage }}</p>
+      <div class="filter-component">
+        <p>Page {{ currentPage }}</p>
+        <div class="filter-dropdowns">
+          <select id="location" v-model="selectedLocation" @change="filterJobs">
+            <option value="">Search by Location</option>
+            <option v-for="location in locations" :key="location">{{ location }}</option>
+          </select>
+          <select id="query" v-model="selectedQuery" @change="filterJobs">
+            <option value="">Search by Job</option>
+            <option v-for="query in queries" :key="query">{{ query }}</option>
+          </select>
+        </div>
+      </div>
+
       <div v-for="item in pagedJobs" :key="item.id">
         <div class="popular-card">
           <div class="popular-header">
             <h1>{{ item.title }}</h1>
-            <button class="popular-btn" @click="ApplyJob(item.id, item.company)">Get job</button>
+            <button class="popular-btn" @click="applyJob(item.id, item.company)">Get job</button>
           </div>
           <div class="info-inner-has">
             <div class="has-inner-top">
@@ -47,8 +60,8 @@ import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 
-const SERVER_RapidAPI_Host = import.meta.env.VITE_X_RapidAPI_Host
-const SERVER_RapidAPI_Key = import.meta.env.VITE_X_RapidAPI_Key
+const SERVER_RAPIDAPI_HOST = import.meta.env.VITE_X_RapidAPI_Host
+const SERVER_RAPIDAPI_KEY = import.meta.env.VITE_X_RapidAPI_Key
 const SERVER_URL = import.meta.env.VITE_URL
 
 import nothingImage from '../assets/nothing.gif'
@@ -63,6 +76,11 @@ const loading = ref(false)
 const currentPage = ref(1)
 const itemsPerPage = 2
 
+const selectedLocation = ref('')
+const selectedQuery = ref('')
+const locations = ref(['Australia', 'Canada', 'Usa', 'Canada'])
+const queries = ref(['Engineering', 'Developer', 'Programmer'])
+
 const pagedJobs = computed(() => {
   const startIndex = (currentPage.value - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
@@ -71,24 +89,26 @@ const pagedJobs = computed(() => {
 
 const totalPages = computed(() => Math.ceil(jobData.value.length / itemsPerPage))
 
-const getJob = async () => {
+const filterJobs = async () => {
   try {
     loading.value = true
 
-    const response = await axios.get(`${SERVER_URL}`, {
+    const response = await axios.get(SERVER_URL, {
       params: {
-        query: 'Engineering;Developer;Programmer' ,
-        location: 'Canada;Usa',
+        query: selectedQuery.value || 'Engineering',
+        location: selectedLocation.value || 'Canada',
         language: 'en_GB',
         datePosted: 'month',
         index: '0'
       },
       headers: {
-        'X-RapidAPI-Key': SERVER_RapidAPI_Key,
-        'X-RapidAPI-Host': SERVER_RapidAPI_Host
+        'X-RapidAPI-Key': SERVER_RAPIDAPI_KEY,
+        'X-RapidAPI-Host': SERVER_RAPIDAPI_HOST
       }
     })
 
+    localStorage.setItem('job', selectedQuery.value);
+    localStorage.setItem('location', selectedLocation.value);
     jobData.value = response.data.jobs
   } catch (err) {
     console.error(err)
@@ -97,11 +117,11 @@ const getJob = async () => {
   }
 }
 
-const ApplyJob = (id, name) => {
+const applyJob = (id, name) => {
   router.push({
     name: 'Company',
     params: {
-      id: id,
+      id,
       company: name
     }
   })
@@ -119,8 +139,8 @@ const previousPage = () => {
   }
 }
 
-onMounted(() => {
-  getJob()
+onMounted(async () => {
+  await filterJobs()
 })
 </script>
 

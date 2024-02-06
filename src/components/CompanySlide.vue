@@ -3,10 +3,10 @@
     <h1>Companies seeking talents through us</h1>
   </div>
   <div class="companies-component">
-    <div class="company-autoscroll">
+    <div class="company-autoscroll" ref="companyAutoscroll">
       <template v-if="jobData.length > 0">
         <div class="company-container" ref="companyContainer">
-          <img v-for="d in jobData" :key="d.id" @click="ApplyJob(d.id, d.company)" :src="d.image" :alt="d.company" class="league-c-img" />
+          <img v-for="d in jobData" :key="d.id" @click="applyJob(d.id, d.company)" :src="d.image" :alt="d.company" class="league-c-img" />
         </div>
       </template>
       <template v-else>
@@ -19,15 +19,19 @@
 </template>
 
 <script setup>
-const SERVER_RapidAPI_Host = import.meta.env.VITE_X_RapidAPI_Host
-const SERVER_RapidAPI_Key = import.meta.env.VITE_X_RapidAPI_Key
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-const SERVER_URL = import.meta.env.VITE_URL
-import { useRouter } from 'vue-router'
-const router = useRouter()
-const loading = ref(false)
-import axios from 'axios'
-const jobData = ref([])
+import axios from 'axios';
+import { useRouter } from 'vue-router';
+
+const SERVER_URL = import.meta.env.VITE_URL;
+const SERVER_RapidAPI_Host = import.meta.env.VITE_X_RapidAPI_Host;
+const SERVER_RapidAPI_Key = import.meta.env.VITE_X_RapidAPI_Key;
+
+const jobData = ref([]);
+const loading = ref(false);
+const job = ref(localStorage.getItem('job') || 'Engineering');
+const location = ref(localStorage.getItem('location') || 'Canada');
+const router = useRouter();
 
 const getJob = async () => {
   try {
@@ -35,8 +39,8 @@ const getJob = async () => {
 
     const response = await axios.get(`${SERVER_URL}`, {
       params: {
-        query: 'Engineering;Developer;Programmer' ,
-        location: 'Canada;Usa',
+        query: job.value,
+        location: location.value,
         language: 'en_GB',
         datePosted: 'month',
         index: '0'
@@ -49,12 +53,12 @@ const getJob = async () => {
 
     jobData.value = response.data.jobs;
   } catch (err) {
-    console.error(err);
+    console.error('Error fetching jobs:', err);
+    // You can provide feedback to the user about the error here
   } finally {
     loading.value = false;
   }
 };
-
 
 const companyContainer = ref(null);
 let animationInterval;
@@ -69,20 +73,19 @@ const scrollImages = () => {
   }
 };
 
-
-const ApplyJob = (id, name) => {
+const applyJob = (id, name) => {
   router.push({
     name: 'Company',
     params: {
       id: id,
       company: name
     }
-  })
-}
+  });
+};
 
 onMounted(() => {
   animationInterval = setInterval(scrollImages, 50);
-  getJob() 
+  getJob();
 });
 
 onBeforeUnmount(() => {
