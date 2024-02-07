@@ -8,13 +8,19 @@
       <div class="filter-component">
         <p>Page {{ currentPage }}</p>
         <div class="filter-dropdowns">
+          <div class="search-bar">
+            <input
+              type="text"
+              v-model="searchInput"
+              placeholder="Search for a Job "
+            />
+            <button class="search-btn" @click="filterJobs">
+              <SearchIcon class="search-btn-icon" />
+            </button>
+          </div>
           <select id="location" v-model="selectedLocation" @change="filterJobs">
-            <option value="">Search by Location</option>
+            <option value="">Filter by location</option>
             <option v-for="location in locations" :key="location">{{ location }}</option>
-          </select>
-          <select id="query" v-model="selectedQuery" @change="filterJobs">
-            <option value="">Search by Job</option>
-            <option v-for="query in queries" :key="query">{{ query }}</option>
           </select>
         </div>
       </div>
@@ -45,8 +51,12 @@
         </div>
       </div>
       <div class="pagination-buttons">
-        <button class="previous-btn" @click="previousPage" :disabled="currentPage === 1">Previous</button>
-        <button class="next-btn" @click="nextPage" :disabled="currentPage === totalPages">Next</button>
+        <button class="previous-btn" @click="previousPage" :disabled="currentPage === 1">
+          Previous
+        </button>
+        <button class="next-btn" @click="nextPage" :disabled="currentPage === totalPages">
+          Next
+        </button>
       </div>
     </div>
     <div class="nothing-contain" v-else>
@@ -66,6 +76,7 @@ const SERVER_URL = import.meta.env.VITE_URL
 
 import nothingImage from '../assets/nothing.gif'
 import WorkerIcon from '../icons/WorkerIcon.vue'
+import SearchIcon from '../icons/SearchIcon.vue'
 import LocationIcon from '../icons/LocationIcon.vue'
 import CloackIcon from '../icons/CloackIcon.vue'
 
@@ -77,9 +88,8 @@ const currentPage = ref(1)
 const itemsPerPage = 2
 
 const selectedLocation = ref('')
-const selectedQuery = ref('')
+const searchInput = ref('')
 const locations = ref(['Australia', 'Canada', 'Usa', 'Canada'])
-const queries = ref(['Software Engineer', 'Registered nurse', 'Teacher', 'Accountant', "Marketing Specialist", 'Sales Representative' , 'Customer Service Representative', 'Administrative Assistant', 'Doctor', 'Engineer'])
 
 const pagedJobs = computed(() => {
   const startIndex = (currentPage.value - 1) * itemsPerPage
@@ -95,7 +105,7 @@ const filterJobs = async () => {
 
     const response = await axios.get(SERVER_URL, {
       params: {
-        query: selectedQuery.value || 'Engineering',
+        query: searchInput.value || 'Engineering',
         location: selectedLocation.value || 'Canada',
         language: 'en_GB',
         datePosted: 'month',
@@ -107,7 +117,7 @@ const filterJobs = async () => {
       }
     })
 
-    localStorage.setItem('job', selectedQuery.value);
+    localStorage.setItem('job', searchInput.value);
     localStorage.setItem('location', selectedLocation.value);
     jobData.value = response.data.jobs
   } catch (err) {

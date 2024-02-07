@@ -42,13 +42,42 @@
 
   .filter-dropdowns select {
     border: none;
-    padding: 10px;
+    padding: 10px 8px;
     outline: none;
     font-size: .8rem;
     font-weight: 300;
     border-radius: 4px;
     color: var(--background-color);
     background-color: var(--primary-color);
+  }
+
+  .search-bar {
+    gap: 4px;
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+  }
+
+  .search-bar input {
+    padding: 0 10px;
+  }
+
+  .search-btn{
+    padding: 6px 10px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+  }
+
+  .search-btn:hover {
+    background-color: var(--secondary-color);
+
+  }
+
+  .search-btn-icon{
+    height: 20px;
+    width: 20px;
+    fill: var(--background-color);
   }
 
   .category-title {

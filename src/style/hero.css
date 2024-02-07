@@ -11,7 +11,11 @@
     background-position: center;
     background-repeat: no-repeat;
     justify-content: space-between;
-    background-color: var(--light-color);
+    background: rgb(237,131,128);
+    background: -moz-linear-gradient(209deg, rgba(237,131,128,1) 0%, rgba(170,242,170,1) 100%);
+    background: -webkit-linear-gradient(209deg, rgba(237,131,128,1) 0%, rgba(170,242,170,1) 100%);
+    background: linear-gradient(209deg, rgba(237,131,128,1) 0%, rgba(170,242,170,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ed8380",endColorstr="#aaf2aa",GradientType=1);
   }
 
 
