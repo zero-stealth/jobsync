@@ -79,7 +79,7 @@ const itemsPerPage = 2
 const selectedLocation = ref('')
 const selectedQuery = ref('')
 const locations = ref(['Australia', 'Canada', 'Usa', 'Canada'])
-const queries = ref(['Engineering', 'Developer', 'Programmer'])
+const queries = ref(['Software Engineer', 'Registered nurse', 'Teacher', 'Accountant', "Marketing Specialist , 'Sales Representative' , 'Customer Service Representative', 'Administrative Assistant', 'Doctor', 'Engineer'"])
 
 const pagedJobs = computed(() => {
   const startIndex = (currentPage.value - 1) * itemsPerPage

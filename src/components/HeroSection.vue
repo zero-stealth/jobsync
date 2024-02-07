@@ -34,6 +34,8 @@ import CompanySlide from '@/components/CompanySlide.vue'
 
 const jobData = ref([])
 const loading = ref(false)
+const job = ref(localStorage.getItem('job') || 'Engineering')
+const location = ref(localStorage.getItem('location') || 'Canada')
 
 // const getJob = async () => {
 //   try {
@@ -53,8 +55,8 @@ const getJob = async () => {
 
     const response = await axios.get(`${SERVER_URL}`, {
       params: {
-        query: 'Techjob',
-        location: 'Canada',
+        query: job.value,
+        location: location.value,
         language: 'en_GB',
         datePosted: 'month',
         index: '0'
