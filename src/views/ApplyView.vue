@@ -49,7 +49,7 @@
         />
       </div>
       <div class="company-group">
-        <label for="certificate">Upload Certificate (PDF or Image):</label>
+        <label for="certificate">Upload Certificate (PDF or JPEG):</label>
         <input
           @change="handleFileUpload('certificate', $event)"
           type="file"
