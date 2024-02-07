@@ -89,7 +89,7 @@ const itemsPerPage = 2
 
 const selectedLocation = ref('')
 const searchInput = ref('')
-const locations = ref(['Australia', 'Canada', 'Usa', 'Canada'])
+const locations = ref(['Australia', 'Canada', 'Usa', 'Uk'])
 
 const pagedJobs = computed(() => {
   const startIndex = (currentPage.value - 1) * itemsPerPage
