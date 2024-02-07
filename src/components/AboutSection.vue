@@ -4,7 +4,7 @@
       <div class="abt-info">
         <div class="abt-h">
           <span>About JobSync Network</span>
-          <h1>A bridge you to your dream company</h1>
+          <h1>A bridge to your dream company</h1>
         </div>
         <p>
           We have been dedicated to serving the job market for over three decades providing many job seekers access to their dream job. Our commitment to excellence and innovation has made us a trusted name in the industry.  Our mission is to connect the right talent with the right opportunities.
